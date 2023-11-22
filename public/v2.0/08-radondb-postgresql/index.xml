@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostgreSQL on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/08-radondb-postgresql/</link>
+    <description>Recent content in PostgreSQL on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/08-radondb-postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建 PostgreSQL 实例</title>
+      <link>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB PostgreSQL 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在页面右侧选择新建 PostgreSQL 实例。
+在基本信息页签，设置 RadonDB PostgreSQL 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+PostgreSQL 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+PostgreSQL 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+PostgreSQL 实例所属的企业空间和项目。
+在应用设置页签，设置 PostgreSQL 实例的参数。
+参数 描述 版本
+PostgreSQL 应用的版本。
+内核版本
+PostgreSQL 数据库的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+PostgreSQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+数据节点数量
+PostgreSQL 实例的数据节点数量。取值范围为 2 到 8。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/08-radondb-postgresql/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB PostgreSQL 实例的运行状态。
+前提条件 已创建 RadonDB PostgreSQL 实例。更多信息，请参阅创建 PostgreSQL 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+已创建的 PostgreSQL 实例将显示在 PostgreSQL 实例列表中。
+参数 描述 名称
+PostgreSQL 实例在 KubeSphere 企业版平台的名称。
+状态
+PostgreSQL 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+PostgreSQL 实例所属的企业空间。
+项目
+PostgreSQL 实例所属的项目。
+内核版本
+PostgreSQL 数据库的内核版本。
+创建时间
+PostgreSQL 实例的创建时间。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+PostgreSQL 实例所属的集群。
+企业空间
+PostgreSQL 实例所属的企业空间。
+项目
+PostgreSQL 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>访问 PostgreSQL 数据库</title>
+      <link>/v2.0/08-radondb-postgresql/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/04-access-the-database/</guid>
+      <description> 本节介绍如何访问 RadonDB PostgreSQL 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情页右侧的概览区域，查看容器组的名称。
+执行以下命令访问 PostgreSQL 数据库：
+kubectl exec -it -n &amp;lt;namespace&amp;gt; &amp;lt;pod_name&amp;gt; -- bash &amp;lt;namespace&amp;gt;：PostgreSQL 实例所在的命名空间（即项目名称）。
+&amp;lt;pod_name&amp;gt;：PostgreSQL 容器组的名称。
+示例命令如下所示：
+kubectl exec -it -n test radondb-cd5s9b-autofailover-0-0 -- bash </description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/08-radondb-postgresql/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB PostgreSQL 数据库的配置参数。
+RadonDB PostgreSQL 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，PostgreSQL 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 内核
+数据库内核版本。创建成功后，不支持修改。
+port
+PostgreSQL 服务器监听的端口号。取值范围为 1~65534，参数值不能为 55555。
+fsync
+是否设置 PostgreSQL 服务器尽可能确保更新被物理写入磁盘。默认值为 true。
+full_page_writes
+是否设置 PostgreSQL 服务器在每个检查点后第一次修改时将每个磁盘页面的全部内容写入 WAL。
+wal_compression
+表示流式复制并发连接的最大数量是否设置 PostgreSQL 服务器在基础备份过程中或在 full_page_writes 启用时压缩写入到 WAL 的完整页面。
+jit
+JIT 编译可用时，是否允许 PostgreSQL 使用 JIT 编译。
+autovacuum
+服务器是否运行自动清理启动器守护进程。
+synchronous_commit
+数据库服务器向客户端返回 success 指示之前所需要完成的 WAL 处理工作量。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/08-radondb-postgresql/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB PostgreSQL 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/08-radondb-postgresql/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB PostgreSQL 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/08-radondb-postgresql/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 PostgreSQL 实例</title>
+      <link>/v2.0/08-radondb-postgresql/11-delete-radondb-postgresql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/11-delete-radondb-postgresql/</guid>
+      <description>本节介绍如何删除 RadonDB PostgreSQL 实例。
+警告 此操作将删除 RadonDB PostgreSQL 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB PostgreSQL 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 RadonDB PostgreSQL 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB PostgreSQL 实例的名称，然后点击确定。
+勾选同时删除备份信息，将同时清除数据库备份。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>迁移 PostgreSQL 数据</title>
+      <link>/v2.0/08-radondb-postgresql/12-migrate-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/12-migrate-data/</guid>
+      <description>本节介绍如何导出 PostgreSQL 源数据库集群内的数据，并导入至目标数据库集群。
+警告 数据迁移过程中，请暂停源数据库的写操作。
+为避免数据丢失，建议在业务低峰期迁移数据。
+小型 PostgreSQL 集群数据迁移 小型 PostgreSQL 集群可通过 pg_dump 离线导出数据，再通过 PostgreSQL 支持的方式导入数据，实现 PostgreSQL 的数据迁移。
+前提条件 已获取管理控制台登录账号和密码，且已获取集群操作权限。
+PostgreSQL 集群状态为活跃。
+已获取目标 PostgreSQL 数据库信息。
+步骤一：创建用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在 PostgreSQL 数据库集群的数据库用户页签，创建数据库用户。该用户的用户名、密码及账户权限必须与源数据库集群中的相同。
+备注 由于数据库具备完整的权限控制，在导出或导入数据时会根据用户权限进行区分。
+高级权限用户：能够导入导出整个数据库的数据。
+普通权限用户：仅能导入导出当前账户权限范围内的数据。
+在后续操作中，默认使用高级权限账户进行示例。如果使用普通权限账户，请注意关注相应的权限范围。
+步骤二：导出数据 若源集群与目标集群网络互通
+在源集群环境下，执行如下命令，将指定数据库内的数据直接导出至目标集群。
+PGPASSWORD=&amp;lt;用户密码&amp;gt; pg_dump -U &amp;lt;源端超级用户&amp;gt; -d &amp;lt;源端要备份的库&amp;gt; -C -h &amp;lt;源端库的 IP&amp;gt; | psql -U &amp;lt;目的端超级用户&amp;gt; -d postgres -h &amp;lt;目的端 IP&amp;gt; 示例：
+PGPASSWORD=Jxxxx1234@ pg_dump -U user_1 -d runoobdb -C -h 192.</description>
+    </item>
+    
+  </channel>
+</rss>

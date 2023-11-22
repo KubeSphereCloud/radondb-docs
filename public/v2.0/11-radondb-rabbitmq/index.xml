@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RabbitMQ on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/11-radondb-rabbitmq/</link>
+    <description>Recent content in RabbitMQ on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/11-radondb-rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建 RabbitMQ 实例</title>
+      <link>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB RabbitMQ 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在页面右侧选择新建 RabbitMQ 实例。
+在基本信息页签，设置 RadonDB RabbitMQ 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+RabbitMQ 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+RabbitMQ 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+RabbitMQ 实例所属的企业空间和项目。
+在应用设置页签，设置 RabbitMQ 实例的参数。
+参数 描述 版本
+RabbitMQ 应用的版本。
+内核版本
+RabbitMQ 的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+RabbitMQ 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+节点数量
+RabbitMQ 的节点数量。参数值可以为 1、3、5、7。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB RabbitMQ 实例的运行状态。
+前提条件 已创建 RadonDB RabbitMQ 实例。更多信息，请参阅创建 RabbitMQ 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+已创建的 RabbitMQ 实例将显示在 RabbitMQ 实例列表中。
+参数 描述 名称
+RabbitMQ 实例在 KubeSphere 企业版平台的名称。
+状态
+RabbitMQ 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+RabbitMQ 实例所属的企业空间。
+项目
+RabbitMQ 实例所属的项目。
+内核版本
+RabbitMQ 的内核版本。
+创建时间
+RabbitMQ 实例的创建时间。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+RabbitMQ 实例所属的集群。
+企业空间
+RabbitMQ 实例所属的企业空间。
+项目
+RabbitMQ 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>访问 RabbitMQ</title>
+      <link>/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/</guid>
+      <description>本节介绍如何访问 RadonDB RabbitMQ。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 根据是否配置 TLS，访问 RabbitMQ 的方式略有不同。
+未配置 TLS 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在详情页左侧，查看访问地址，示例如下。
+在参数管理页签，查看默认的用户名 default_user（默认为 guest）和用户名密码 default_pass（默认为 guest）。
+将鼠标悬停至 Web 控制台右下角的，点击 kubectl，在弹出的对话框执行以下命令访问 RabbitMQ。
+若在集群内部访问 RabbitMQ，执行以下命令：
+rabbitmqadmin --host=&amp;lt;instance_name&amp;gt;.&amp;lt;namespace&amp;gt; --port=15672 --username=&amp;lt;user&amp;gt; --password=&amp;lt;password&amp;gt; &amp;lt;instance_name&amp;gt;：RabbitMQ 实例的名称。
+&amp;lt;namespace&amp;gt;：RabbitMQ 实例所在的命名空间（即项目名称）。
+port 默认为 15672，可以不指定 --port 参数。
+&amp;lt;user&amp;gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户名。
+&amp;lt;password&amp;gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户的密码。
+示例命令如下：
+rabbitmqadmin --host=radondb-feoed2.test --port=15672 --username=guest --password=guest 若在集群外部访问 RabbitMQ，执行以下命令：</description>
+    </item>
+    
+    <item>
+      <title>修改配置参数</title>
+      <link>/v2.0/11-radondb-rabbitmq/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB RabbitMQ 的配置参数。
+RadonDB RabbitMQ 实例支持编辑配置参数，通过管理配置参数可调优服务性能，并可启用高可用性能。
+警告 修改部分配置参数后，RabbitMQ 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 节点端口
+是否启用 NodePort 以便从集群外部访问。
+cluster_partition_handling
+网络分区处理策略。
+cluster_keepalive_interval
+向集群里的其他子节点发送存活消息的间隔，单位为 ms。取值范围为 1000–51200。
+queue_master_locator
+队列主节点的策略。
+peer_discovery_backend
+指定集群节点发现机制。
+address_type
+访问其他节点时使用的方式。
+hostname
+Kubernetes API 主机名。
+num_acceptors.tcp
+接收 tcp 连接的 erlang 进程数。
+handshake_timeout
+连接超时时间，单位 ms。
+num_acceptors.ssl
+接收 tls 连接的 erlang 进程数。
+vm_memory_high_watermark.relative
+内存阈值, 绝对值。</description>
+    </item>
+    
+    <item>
+      <title>扩展 RabbitMQ 节点</title>
+      <link>/v2.0/11-radondb-rabbitmq/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB RabbitMQ 的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断 RabbitMQ 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/11-radondb-rabbitmq/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB RabbitMQ 节点的 CPU 和内存资源。
+警告 此操作可能会中断 RabbitMQ 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/11-radondb-rabbitmq/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到 RadonDB RabbitMQ 节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 RabbitMQ 实例</title>
+      <link>/v2.0/11-radondb-rabbitmq/11-delete-radondb-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/11-delete-radondb-rabbitmq/</guid>
+      <description>本节介绍如何删除 RadonDB RabbitMQ 实例。
+警告 此操作将删除 RadonDB RabbitMQ 实例中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB RabbitMQ 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RadonDB RabbitMQ 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB RabbitMQ 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>管理数据库用户 on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/02-radondb-mysql/03-manage-database-users/</link>
+    <description>Recent content in 管理数据库用户 on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/02-radondb-mysql/03-manage-database-users/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建数据库用户。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签，然后点击创建。
+在创建用户对话框，设置用户名和密码，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 说明 用户名
+自定义用户名称。
+配置要求：用户名只能包含大写字母、小写字母、数字，必须以大写或小写字母开头，长度为 2 到 26 个字符。
+密码
+输入用户密码。
+配置要求：密码必须包含至少一个大写字母、一个小写字母、一个数字和一个特殊字符（!@#$%^&amp;amp;*_+-=），长度为 8 到 32 个字符。
+授权数据库
+输入授权访问的数据库名称。
+默认为*，表示授权全部数据库。仅支持输入一个数据库名称。
+权限
+选择用户的权限。可选择普通权限、高级权限或自定义权限。支持创建多个具有相同权限的用户。
+MySQL 实例创建成功后，将生成默认用户 root。root 是超级管理员用户，拥有对数据库的最高管理权限。该用户账号默认生成，不支持修改和删除。
+普通权限用户具备数据库操作使用权限，包括 ALTER、ALTER ROUTINE、CREATE、CREATE ROUTINE、CREATE TEMPORARY TABLES、CREATE VIEW、DELETE、DROP、EXECUTE、EVENT、INDEX、INSERT、LOCK TABLES、SELECT、SHOW VIEW、UPDATE、TRIGGER、REFERENCES 等数据库操作权限。
+高级权限用户具备数据库高级操作使用权限，除普通权限外，还具备 PROCESS、RELOAD 和 SHOW DATABASES 数据库操作权限。
+自定义权限用户的权限在 yaml 文件中进行设置。打开右上角的编辑 YAML，在 yaml 文件中自定义用户的权限。
+授权主机
+输入允许访问的主机 IP。</description>
+    </item>
+    
+    <item>
+      <title>编辑数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑数据库用户。
+MySQL 不支持编辑已创建用户的名称。
+前提条件 RadonDB MySQL 实例状态为运行中。
+已创建数据库用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，您可以修改密码、授权数据库、权限和授权主机信息。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除数据库用户。
+前提条件 RadonDB MySQL 实例状态为运行中。
+已创建数据库用户。
+删除单个数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+  </channel>
+</rss>

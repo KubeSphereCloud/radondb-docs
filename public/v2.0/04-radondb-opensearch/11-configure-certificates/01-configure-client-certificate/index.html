@@ -1,0 +1,3111 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="keywords" content="[Kubernetes, {ks_product}, RadonDB, RadonDB OpenSearch,证书]">
+
+
+
+<meta name="description" content="介绍如何配置 OpenSearch 集群客户端证书。">
+
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<title>配置 OpenSearch 集群客户端证书 - RadonDB DMP 数据库管理平台</title>
+<link href="/css/bulma.css" rel="stylesheet">
+<link href="/css/bulma-tooltip.min.css" rel="stylesheet">
+<link href="/css/atom-one-light.css" rel="stylesheet" />
+<link href="/css/magnific-popup.css" rel="stylesheet" />
+
+
+<link href="/scss/main.min.3f975d466d577a77f0f174d270294cab5515450a1619ced59c3e7370b108aeb6.css" rel="stylesheet" integrity="sha256-P5ddRm1Xenfw8XTScClMq1UVRQoWGc7VnD5zcLEIrrY=">
+
+<script src="/js/jquery-2.2.4.js"></script>
+<body
+        class="root   "
+        style=""
+        ><header>
+  <nav class="navbar">
+    
+      <a href="/" class="navbar-logo-wrapper">
+        <img class="navbar-logo" src="/images/qingcloud-logo.svg" />
+        <div class="navbar-split navbar-left-split">|</div>
+        <div class="navbar-logo-text">RadonDB DMP 数据库管理平台</div>
+      </a>
+    
+    <div class="navbar-nav">
+      <div
+        class="navbar-nav-item navbar-nav-version "
+        style="">
+        
+        <div class="dropdown-trigger">
+          <span class="project-version">
+            v2.0
+          </span>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="search navbar-search">
+      <form action="/v2.0/search/" method="GET">
+        <div class="control has-icons-left has-icons-right docs-search-input">
+          <span class="icon is-left">
+            <img src="/images/icons/magnifier_duotone.svg" />
+          </span>
+          <input
+            class="input"
+            name="q"
+            type="input"
+            placeholder="请输入关键字快速获取帮助"
+            autocomplete="off"
+          />
+          <span class="icon is-right"> </span>
+        </div>
+        <img class="clear-search-input" src="/images/icons/close_duotone.svg" />
+      </form>
+      <div class="search-result navbar-search-result">
+        <div class="search-result-loading"></div>
+        <div class="search-result-content"></div>
+        <div class="search-result-none">
+          没有找到搜索结果， 请更换关键词重新搜索
+        </div>
+      </div>
+    </div>
+    
+  </nav>
+</header><script id="search-result-total-template" type="text/x-js-template">
+  <div class="search-result-total">
+    共为您找到 ${count} 个结果
+  </div>
+</script>
+
+<script id="search-result-item-template" type="text/x-js-template">
+  <div class="search-result-content-item">
+    <div class="search-result-content-item-title">
+      <a href="${href}">${title}</a>
+    </div>
+    <div class="search-result-content-item-content">
+      ${content}
+    </div>
+    <div class="search-result-content-item-ref">
+      <ul class="content-breadcrumb">
+      </ul>
+    </div>
+  </div>
+</div>
+</script>
+
+<script id="search-breadcrumb-template" type="text/x-js-template">
+  <li class="icon-slash_fill">
+    <a href="${href}">${title}</a>
+  </li>
+</script>
+
+<script id="search-result-total-template" type="text/x-js-template">
+  <div class="search-result-total">
+    共为您找到 ${count} 个结果
+  </div>
+</script>
+<script id="search-result-page-template" type="text/x-js-template">
+  <nav class="search-result-pagination pagination is-centered">
+    <a class="pagination-previous icon-chevron_left_fill"></a>
+    <a class="pagination-next icon-chevron_right_fill"></a>
+    <ul class="pagination-list">
+    </ul>
+  </nav>
+</script>
+<div class="container">
+
+  
+
+
+  
+    
+  
+
+
+<aside class="sidebar-wrapper">
+  <div class="sidebar-drag"></div>
+  <div class="sidebar">
+    
+      <div class="sidebar-title" >
+        <a href="/v2.0/">
+          
+            DMP 数据库管理平台
+        </a>
+        
+      </div>
+      
+    
+    <nav class="sidebar-menu">
+      
+        
+        <ul>
+  
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/01-intro/">产品简介</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/01-intro/01-overview/">产品概述</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/01-intro/02-access-dmp/">进入数据库管理平台</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/02-radondb-mysql/">MySQL</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/01-install-radondb-mysql/">创建 MySQL 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/02-radondb-mysql/03-manage-database-users/">管理数据库用户</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/">创建数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/03-manage-database-users/02-edit-a-database-user/">编辑数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/">删除数据库用户</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/04-access-the-database/">访问 MySQL 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/">管理数据库备份</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/01-enable-database-auto-backup/">开启 MySQL 数据库自动备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/02-create-database-backup/">创建 MySQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/03-view-database-backup/">查看 MySQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/04-restore-database/">从备份恢复 MySQL 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/06-manage-database-backup/05-delete-database-backup/">删除 MySQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/07-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/08-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/09-adjust-cpu-and-memory-resources-copy/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/10-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/02-radondb-mysql/11-delete-radondb-mysql/">删除 MySQL 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item active ">
+            <a href="/v2.0/04-radondb-opensearch/">OpenSearch</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_up_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/">创建 OpenSearch 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/03-access-the-database/">访问 OpenSearch 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/05-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/06-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/07-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/08-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/09-delete-radondb-opensearch/">删除 OpenSearch 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item active ">
+            <a href="/v2.0/04-radondb-opensearch/11-configure-certificates/">配置 OpenSearch 集群证书</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_up_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item active current">
+            <a href="/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/">配置 OpenSearch 集群客户端证书</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/">配置 OpenSearch 集群服务端证书</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/">对接 Logstash 和 Kafka</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/05-radondb-redis-cluster/">Redis Cluster</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/01-install-radondb-redis-cluster/">创建 Redis Cluster 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/05-radondb-redis-cluster/03-manage-database-users/">管理数据库用户</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/03-manage-database-users/01-create-a-database-user/">创建数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/03-manage-database-users/02-edit-a-database-user/">编辑数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/03-manage-database-users/03-delete-database-users/">删除数据库用户</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/04-access-the-database/">访问 Redis Cluster 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/07-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/08-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/09-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/10-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/05-radondb-redis-cluster/11-delete-radondb-redis-cluster/">删除 Redis Cluster 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/06-radondb-redis-sentinel/">Redis Sentinel</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/01-install-radondb-redis-sentinel/">创建 Redis Sentinel 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/06-radondb-redis-sentinel/03-manage-database-users/">管理数据库用户</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/03-manage-database-users/01-create-a-database-user/">创建数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/03-manage-database-users/02-edit-a-database-user/">编辑数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/03-manage-database-users/03-delete-database-users/">删除数据库用户</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/04-access-the-database/">访问 Redis Sentinel 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/07-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/08-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/09-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/10-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/06-radondb-redis-sentinel/11-delete-radondb-redis-sentinel/">删除 Redis Sentinel 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/07-radondb-mongodb/">MongoDB</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/01-install-radondb-mongodb/">创建 MongoDB 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/03-access-the-database/">访问 MongoDB 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/05-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/06-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/07-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/08-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/07-radondb-mongodb/09-delete-radondb-mongodb/">删除 MongoDB 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/08-radondb-postgresql/">PostgreSQL</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/">创建 PostgreSQL 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/02-view-database-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/08-radondb-postgresql/03-manage-database-users/">管理数据库用户</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/03-manage-database-users/01-create-a-database-user/">创建数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/03-manage-database-users/02-edit-a-database-user/">编辑数据库用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/03-manage-database-users/03-delete-database-users/">删除数据库用户</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/04-access-the-database/">访问 PostgreSQL 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/">管理数据库备份</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/">开启 PostgreSQL 数据库自动备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/">创建 PostgreSQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/03-view-database-backup/">查看 PostgreSQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/04-restore-database/">从备份恢复 PostgreSQL 数据库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/06-manage-database-backup/05-delete-database-backup/">删除 PostgreSQL 数据库备份</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/07-manage-parameters/">修改数据库配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/08-scale-out-the-database-cluster/">扩展数据库节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/09-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/10-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/11-delete-radondb-postgresql/">删除 PostgreSQL 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/08-radondb-postgresql/12-migrate-data/">迁移 PostgreSQL 数据</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/10-radondb-kafka/">Kafka</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/01-quickstart/">快速入门</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/02-install-radondb-kafka/">创建 Kafka 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/03-view-kafka-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/10-radondb-kafka/04-manage-database-users/">管理 Kafka 用户</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/04-manage-database-users/01-create-a-database-user/">创建 Kafka 用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/04-manage-database-users/02-edit-a-database-user/">编辑 Kafka 用户</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/04-manage-database-users/03-delete-database-users/">删除 Kafka 用户</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/05-access-kafka/">访问 Kafka </a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/10-radondb-kafka/07-manage-topics/">管理主题</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/07-manage-topics/01-create-topics/">创建主题</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/07-manage-topics/02-edit-topics/">编辑主题</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/07-manage-topics/03-delete-topics/">删除主题</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/08-manage-parameters/">修改配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/09-scale-out-the-database-cluster/">扩展 Kafka 节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/10-rebalance-nodes/">重平衡 Kafka 节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/11-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/12-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/10-radondb-kafka/13-delete-radondb-kafka/">删除 Kafka 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/11-radondb-rabbitmq/">RabbitMQ</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/">创建 RabbitMQ 实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/">查看运行状态</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/">访问 RabbitMQ</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/07-manage-parameters/">修改配置参数</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/08-scale-out-the-database-cluster/">扩展 RabbitMQ 节点</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/09-adjust-cpu-and-memory-resources/">调整 CPU 和内存资源</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/10-expand-the-volume/">扩展卷</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/11-radondb-rabbitmq/11-delete-radondb-rabbitmq/">删除 RabbitMQ 实例</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/">备份管理</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-create-a-backup-repository/">创建备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/02-backup-data-management/">管理数据库备份</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/02-backup-data-management/01-view-backup-list/">查看数据库备份</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/02-backup-data-management/02-restore-from-a-backup/">从备份恢复数据库实例</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/02-backup-data-management/03-delete-a-backup/">删除数据库备份</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
+  
+</ul>
+      
+    </nav>
+
+  </div>
+</aside>
+<div class="content-card-wrapper">
+  <div class="content-card">
+    <div class="content-wrapper"><ul class="content-breadcrumb">
+      <li class="icon-slash_fill"><a href="/v2.0" data-url="/v2.0">RadonDB DMP 数据库管理平台</a></li>
+      <li class="icon-slash_fill"><a href="/v2.0/04-radondb-opensearch" data-url="/v2.0/04-radondb-opensearch">OpenSearch</a></li>
+      <li class="icon-slash_fill"><a href="/v2.0/04-radondb-opensearch/11-configure-certificates" data-url="/v2.0/04-radondb-opensearch/11-configure-certificates">配置 OpenSearch 集群证书</a></li>
+      <li class="icon-slash_fill"><a href="/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate" data-url="/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate">配置 OpenSearch 集群客户端证书</a></li></ul><div class="post-wrapper"><div class="post">
+  <h1 class="post-title">
+    配置 OpenSearch 集群客户端证书</h1>
+  <div class="post-info">
+    <div class="post-date">
+      更新时间：2023-11-22 02:07:08
+    </div>
+    
+    
+    
+    
+    
+    
+    
+      <div
+        class="tag post-tag export-pdf has-tooltip-top has-tooltip-arrow"
+        data-tooltip="下载范围：所属一级目录的全部内容"
+        data-url="/v2.0/04-radondb-opensearch">
+        <span class="icon-format_pdf_2_fill"></span>
+        PDF
+      </div>
+      
+    
+  </div><div class="post-menu">
+  <div class="post-menu-title">本页目录</div>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_创建_opensearch_集群">创建 OpenSearch 集群</a></li>
+    <li><a href="#_生成客户端证书">生成客户端证书</a></li>
+    <li><a href="#_多用户访问集群">多用户访问集群</a></li>
+  </ul>
+</nav>
+</div><div class="post-content">
+    
+      
+      
+<div class="paragraph">
+<p>本节介绍如何对接配置 OpenSearch 集群客户端证书。</p>
+</div>
+<div class="sect1">
+<h2 id="_创建_opensearch_集群">创建 OpenSearch 集群</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>修改 <strong>opensearch.yaml</strong> 文件。</p>
+<div class="openblock">
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>在 <strong>spec.general.additionalConfig</strong> 区域，增加 <strong>plugins.security.ssl.http.clientauth_mode: OPTIONAL</strong> 配置。</p>
+</li>
+<li>
+<p>集群开启 TLS 认证。</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster
+metadata:
+name: os-001 spec:
+general:
+version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 additionalConfig:
+plugins.security.ssl.http.clientauth_mode: OPTIONAL dashboards:
+version: 2.3.0 enable: true replicas: 1 resources:
+requests: memory: &#34;1Gi&#34; cpu: &#34;500m&#34;
+limits:
+memory: &#34;1Gi&#34; cpu: &#34;500m&#34;
+tls:
+enable: true generate: true
+confMgmt: smartScaler: true
+security: config:
+securityConfigSecret:
+# Pre create this secret with required security configs, to override the default settings
+name: securityconfig-secret adminCredentialsSecret:
+name: admin-credentials-secret tls:
+transport: generate: true
+http:
+generate: true
+nodePools:
+- component: masters
+replicas: 3 diskSize: &#34;50Gi&#34; persistence:
+pvc:
+storageClass: csi-qingcloud accessModes:
+- ReadWriteOnce nodeSelector:
+resources: requests:
+memory: &#34;1Gi&#34;
+cpu: &#34;500m&#34; limits:
+memory: &#34;1Gi&#34;
+cpu: &#34;500m&#34; roles:
+- &#34;cluster_manager&#34;
+- component: data-hot replicas: 2
+diskSize: &#34;80Gi&#34; persistence:
+pvc:
+storageClass: csi-qingcloud accessModes:
+- ReadWriteOnce additionalConfig:
+node.attr.datatier: &#34;hot&#34; # warm, cold resources:
+requests: memory: &#34;1Gi&#34; cpu: &#34;500m&#34;
+limits:
+memory: &#34;1Gi&#34; cpu: &#34;500m&#34;
+roles:
+- &#34;data&#34;
+--- apiVersion: v1 kind: Secret metadata:
+name: admin-credentials-secret type: Opaque
+data:
+username: c2h1YWliMTIz password: c2h1YWliMTIz</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>在 <strong>securityconfig.yaml</strong> 中增加 <strong>clientcert_auth_domain</strong> 配置。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">config.yml: |- _meta:
+type: &#34;config&#34;
+config_version: &#34;2&#34; config:
+dynamic: http:
+anonymous_auth_enabled: false authc:
+basic_internal_auth_domain: http_enabled: true transport_enabled: true order: &#34;4&#34; http_authenticator:
+type: basic
+challenge: true authentication_backend:
+type: internal clientcert_auth_domain:
+http_enabled: true transport_enabled: true order: 1 http_authenticator:
+type: clientcert #config:
+#username_attribute: cn #optional, if omitted DN becomes username challenge: false
+authentication_backend: type: noop</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>执行以下命令创建集群。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell"> root@master1:/home/ubuntu/opensearch# kubectl -n opensearch apply -f ./security-config.yaml
+ root@master1:/home/ubuntu/opensearch# kubectl -n opensearch apply -f ./os-ssl-true.yaml</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_生成客户端证书">生成客户端证书</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>获取 CA 证书。集群自生成的 CA 证书名称为 &lt;cluster-name&gt;-ca。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">root@master1:/home/ubuntu/opensearch# kubectl -n opensearch get secret os-001-ca -oyaml
+echo &lt;ca.crt 内容&gt; | base64 -d &gt; root-ca.pem
+echo &lt;ca.key 内容&gt; | base64 -d &gt; root-ca-key.pem</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>签发客户端证书。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">openssl genrsa -out client-key-temp.pem 2048
+openssl pkcs8 -inform PEM -outform PEM -in client-key-temp.pem -topk8 -nocrypt -v1 PBE-SHA1-3DES -out client-key.pem
+openssl req -new -key client-key.pem -subj &#34;/C=CA/ST=ONTARIO/L=TORONTO/O=ORG/OU=UNIT/CN=CLIENT&#34; -out client.csr
+openssl x509 -req -in client.csr -CA root-ca.pem -CAkey root-ca-key.pem -CAcreateserial -sha256 -out client.pem -days 730</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其中 <strong>-subj</strong> 后的内容可以自定义。</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>获取客户端证书的专有名称（DN）。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">root@master1:/home/ubuntu/opensearch/certs# openssl x509 -subject -nameopt RFC2253 -noout -in client.pem
+subject=CN=CLIENT,OU=UNIT,O=ORG,L=TORONTO,ST=ONTARIO,C=CA</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>在 OpenSearch Dashboards 将在上一步获得的映射给用户。</p>
+<div class="openblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/images/dmp/os-dashboards.png" alt="os dashboards"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>使用证书访问集群。</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">root@i-abmm2sr0:~/test# curl -k --cert client.pem --key client-key.pem https://172.22.9.17:30201/_cat/nodes?pretty</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其中：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>-k</strong>： 忽略服务端证书验证。</p>
+</li>
+<li>
+<p><strong>--cert</strong>： 指定客户端证书。</p>
+</li>
+<li>
+<p><strong>--key</strong>： 指定客户端证书的 key。</p>
+</li>
+<li>
+<p><strong>172.22.9.17</strong>： 任意节点 IP。</p>
+</li>
+<li>
+<p><strong>30201</strong>：9200 暴露在集群外部的端口号。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_多用户访问集群">多用户访问集群</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>用户使用客户端证书绑定的 role 来获取相应的权限，根据实际情况，不同用户可配置不同的 role，同时生成对应的证书访问集群。</p>
+</div>
+<div class="paragraph">
+<p>下面举例如何将生成的证书绑定在 all_access 和 dashboard_read_only 两个 role 上。关于如何生成证书，请参阅<a href="#_生成客户端证书">生成客户端证书</a>。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>进入 OpenSearch Dashboards 管理页面，在左侧导航栏选择 <strong>Security</strong> &gt; <strong>Roles</strong>。</p>
+</li>
+<li>
+<p>在右侧的 <strong>Roles</strong> 页面，点击 <strong>Create role</strong>，输入角色名称并设置权限，点击 <strong>Submit</strong>。</p>
+<div class="openblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/images/dmp/multiuser-access.png" alt="multiuser access"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>测试绑定是否成功。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>使用 all_access 证书访问集群，如果出现以下信息，则代表访问集群成功。</p>
+<div class="openblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/images/dmp/all-access-success.png" alt="all access success"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>使用 dashboard_read_only 证书访问 Dashboard，如果出现以下信息，则代表访问集群成功。</p>
+<div class="openblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/images/dmp/dashboard-only-success.png" alt="dashboard only success"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>使用 dashboard_read_only 证书访问集群。如果出现报错，则符合预期。</p>
+<div class="openblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="/images/dmp/dashboard-only-fail.png" alt="dashboard only fail"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+    
+
+  </div>
+  <div class="post-footer">
+    <div class="post-prev">
+    </div>
+    <div class="post-next">
+    </div>
+  </div>
+  <div class="post-back-to-top">
+    <span class="icon-up_3_fill"></span>
+  </div>
+</div>
+<div class="post-placeholder"><div class="post-menu">
+  <div class="post-menu-title">本页目录</div>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_创建_opensearch_集群">创建 OpenSearch 集群</a></li>
+    <li><a href="#_生成客户端证书">生成客户端证书</a></li>
+    <li><a href="#_多用户访问集群">多用户访问集群</a></li>
+  </ul>
+</nav>
+</div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </body><script src="/js/bootstrap.min.js"></script>
+<script src="/js/autocomplete/jquery.autocomplete.js"></script>
+<script src="/js/copy-to-clipboard.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/jquery.tmpl.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/search/jquery.mark.min.js"></script>
+
+<script type="text/javascript" src="/js/common.428b8a7f426567136e0501d49705f10dac2e4539d10c2f396d7c9ee45df1469eaa38e983928589e0e35ed30c1732ddbcda694ac0928ffffffee76b4a0017adf2.js" integrity="sha512-QouKf0JlZxNuBQHUlwXxDawuRTnRDC85bXye5F3xRp6qOOmDkoWJ4ONe0wwXMt282mlKwJKP///&#43;52tKABet8g=="></script>
+
+<script type="text/javascript" src="/js/search.d8001c3e1b66b9a0b48e0c23ad0dbfc0906f194f8925ae78a9900b960679cfa7e41cebd9efd654f84535d02cbce7c4971f226e6f07288c26c3c4560c36d7655b.js"></script>
+<script>
+  $(function() {
+    
+    hljs.highlightAll();
+    
+    $.each($('.post-content .imageblock img'), function () {
+      $(this).attr('data-mfp-src', $(this).attr('src'));
+    });
+    $('.post-content').magnificPopup({
+      disableOn: function () {
+        if ($(window).width() < 600) {
+          return false;
+        }
+        return true;
+      },
+      delegate: '.imageblock img',
+      type: 'image',
+      gallery: {
+        enabled: true,
+      },
+    });
+  });
+</script>
+</html>

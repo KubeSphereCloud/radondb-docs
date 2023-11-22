@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenSearch on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/04-radondb-opensearch/</link>
+    <description>Recent content in OpenSearch on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/04-radondb-opensearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建 OpenSearch 实例</title>
+      <link>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB OpenSearch 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在页面右侧选择新建 OpenSearch 实例。
+在基本信息页签，设置 RadonDB OpenSearch 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+OpenSearch 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+OpenSearch 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+OpenSearch 实例所属的企业空间和项目。
+在应用设置页签，设置 OpenSearch 实例的参数。
+参数 描述 版本
+OpenSearch 应用的版本。
+内核版本
+OpenSearch 数据库的内核版本。
+主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点设置
+资源：分配给每个节点的 CPU 和内存资源。
+主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点数量：OpenSearch 实例各类型节点的数量。主节点的数量默认为 3 且不能修改，其他节点数量可根据需要设置。
+存储类：节点使用的存储系统对应的存储类。默认值为 local。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷：每个节点使用的卷大小，单位为 GiB。每个主节点的卷大小默认为 20 GiB。控制面板节点和 Logstash 节点不能挂载卷。其他节点的卷大小可根据需要设置。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/04-radondb-opensearch/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB OpenSearch 实例的运行状态。
+前提条件 已创建 RadonDB OpenSearch 实例。更多信息，请参阅创建 OpenSearch 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+已创建的 OpenSearch 实例将显示在 OpenSearch 实例列表中。
+参数 描述 名称
+OpenSearch 实例在 KubeSphere 企业版平台的名称。
+状态
+OpenSearch 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+OpenSearch 实例所属的企业空间。
+项目
+OpenSearch 实例所属的项目。
+内核版本
+OpenSearch 数据库的内核版本。
+创建时间
+OpenSearch 实例的创建时间。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+OpenSearch 实例所属的集群。
+企业空间
+OpenSearch 实例所属的企业空间。
+项目
+OpenSearch 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>访问 OpenSearch 数据库</title>
+      <link>/v2.0/04-radondb-opensearch/03-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/03-access-the-database/</guid>
+      <description>Dashboards 是 OpenSearch 的可视化工具，提供面向用户的 OpenSearch 插件管理服务，包括安全性、警报、索引状态管理、 SQL 管理等插件。
+本节介绍如何访问 OpenSearch 数据库的 Dashboards。
+前提条件 如果使用外部读写地址，取决于您的网络环境，您可能需要配置流量转发和防火墙规则。有关具体操作请联系您的网络环境管理员。
+RadonDB OpenSearch 实例状态为运行中。
+已获取 RadonDB OpenSearch 数据库用户名和密码。如果您在创建 RadonDB OpenSearch 实例时未修改过用户名和密码，此处默认用户名为 admin，默认密码为 RadonDB@123。如果您修改过用户名和密码，请使用修改后的用户名和密码登录。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入项目。
+点击应用负载 &amp;gt; 服务，搜索并点击新建的 OpenSearch 实例的 Dashboards 服务进入详情页面。
+点击更多操作 &amp;gt; 编辑外部访问。
+将 Dashboards 服务的访问模式设置为 NodePort，点击确定。
+进入 DMP 数据库管理平台，在左侧导航栏点击 OpenSearch，然后点击已创建的 OpenSearch 实例进入详情页面。
+在页面左侧的访问地址区域，查看控制面板地址。
+在浏览器输入 http://dashboard_IP:dashboard_port/ 进入 OpenSearch Dashboards 登录页面，输入账户名和密码。
+备注 请将 dashboard_IP 和 dashboard_port 替换成实际的值。
+取决于 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/04-radondb-opensearch/05-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/05-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB OpenSearch 数据库的配置参数。
+RadonDB OpenSearch 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，OpenSearch 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+修改配置参数 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 thread_pool.write.queue_size
+线程池写队列的大小。取值范围为 1000 ~ 20000， 默认值为 10000。
+thread_pool.search.queue_size
+线程池搜索队列的大小。取值范围为 1000 ~ 20000， 默认值为 1000。
+action.destructive_requires_name
+是否在删除索引时禁止使用通配符和 _all 。您可以将此参数设置为 false，以允许使用通配符和 _all。默认值为 true。
+http.cors.enabled
+是否启用跨域资源共享（CORS）。默认值为 false。
+http.cors.allow-origin
+可用于跨域资源共享（CORS）的域（origin）。
+indices.fielddata.cache.size
+可用作字段数据缓存的最大堆内存。默认值为 -1b。
+indices.memory.index_buffer_size
+分配给节点并由所有分片作为索引缓冲区共享的堆内存大小。参数值可以为百分比或字节数。默认值为 10%。
+indices.queries.cache.size
+过滤器缓存的内存大小。取值可以为百分比（例如 5%）或确切值（例如 512mb）。默认值为10%。默认值为 10%。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/04-radondb-opensearch/06-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/06-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB OpenSearch 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点角色并设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/04-radondb-opensearch/07-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/07-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB OpenSearch 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择节点角色，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/04-radondb-opensearch/08-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/08-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，选择节点角色，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 OpenSearch 实例</title>
+      <link>/v2.0/04-radondb-opensearch/09-delete-radondb-opensearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/09-delete-radondb-opensearch/</guid>
+      <description>本节介绍如何删除 RadonDB OpenSearch 实例。
+警告 此操作将删除 RadonDB OpenSearch 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB OpenSearch 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 RadonDB OpenSearch 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB OpenSearch 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>对接 Logstash 和 Kafka</title>
+      <link>/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/</guid>
+      <description>Logstash 是一个开源数据收集引擎，支持从多个数据源采集数据、转换数据、并将数据写入到指定存储中。本节介绍如何对接 Logstash 和 Kafka。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台管理权限。
+已经创建好 Kafka 和 OpenSearch 集群，且集群状态处于运行中。
+Kafka 集群操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 集群列表中，点击一个集群名称打开其详情页面。
+在页面右侧点击主题。
+在创建主题对话框，输入主题名称，并设置分区数量和副本数量，点击确定。
+点击 Kafka 用户，然后点击创建。
+在创建用户对话框，设置用户名为 logstash，然后点击确定。用户创建完成后将显示在用户列表中。
+在页面左侧的传输加密区域，下载 CA 证书并保存密码。
+在页面右侧点击 Kafka 用户页签，下载用户证书并保存密码。
+上传证书到服务器，根据 keystore 和 truststore 创建 secret 或 configmap。
+# 创建 secret kubectl -n p1 create secret generic test-kafka-ssl --from-file ./cluster.keystore.p12 --from-file ./cluster.truststore.p12 # 创建 configmap kubectl -n p1 create cm test-cm-kafka --from-file=/tmp/cluster.</description>
+    </item>
+    
+  </channel>
+</rss>

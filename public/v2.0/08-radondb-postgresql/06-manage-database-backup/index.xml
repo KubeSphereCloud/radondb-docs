@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>管理数据库备份 on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/</link>
+    <description>Recent content in 管理数据库备份 on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/08-radondb-postgresql/06-manage-database-backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开启 PostgreSQL 数据库自动备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/</guid>
+      <description>本节介绍如何开启 RadonDB PostgreSQL 数据库自动备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击设置自动备份旁的设置。
+在设置自动备份策略对话框，开启下方的滑块，设置备份周期、备份时间段、备份保留期限和备份保留份数，点击确定。
+设置完成后，可继续点击设置编辑自动备份策略。</description>
+    </item>
+    
+    <item>
+      <title>创建 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/</guid>
+      <description>本节介绍如何创建 RadonDB PostgreSQL 数据库备份。
+备注 备份过程可能会导致数据库服务压力过大，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击创建备份。
+在创建备份对话框，输入备份任务的名称，然后点击确定。
+数据库备份将显示在备份列表中。</description>
+    </item>
+    
+    <item>
+      <title>查看 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/03-view-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/03-view-database-backup/</guid>
+      <description>本节介绍如何查看 RadonDB PostgreSQL 数据库备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，查看以下信息。
+参数 说明 名称
+备份任务的名称。
+状态
+主要包含以下状态：
+备份成功：备份任务成功运行。
+备份失败：备份任务运行失败。
+备份中：正在进行备份。
+备份类型
+手动备份或自动备份。
+大小
+备份文件的大小。
+备份开始时间
+开始备份的时间。
+备份结束时间
+结束备份的时间。
+在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份。
+在列表右上角点击可刷新列表信息。
+在列表右上角点击可定制列表中显示的信息。
+备注 数据库备份也会显示在运维管理 &amp;gt; 备份管理 &amp;gt; 备份数据管理页面。</description>
+    </item>
+    
+    <item>
+      <title>从备份恢复 PostgreSQL 数据库</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/04-restore-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/04-restore-database/</guid>
+      <description>本节介绍如何从备份恢复 RadonDB PostgreSQL 数据库。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份，且状态为备份成功。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份任务，点击，选择从备份恢复。
+在基本信息页签，编辑将通过备份创建的实例名称，然后点击下一步。
+在应用设置页签，确认将创建的实例的参数。
+点击确定，将自动创建新的 RadonDB PostgreSQL 实例。
+备注 恢复的新实例的磁盘规格必须大于或等于原实例，以免因磁盘不足导致恢复失败。</description>
+    </item>
+    
+    <item>
+      <title>删除 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/05-delete-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/05-delete-database-backup/</guid>
+      <description>本节介绍如何删除 RadonDB PostgreSQL 数据库备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份，点击，选择删除。
+在弹出的删除对话框，输入备份名称，点击确定。</description>
+    </item>
+    
+  </channel>
+</rss>
