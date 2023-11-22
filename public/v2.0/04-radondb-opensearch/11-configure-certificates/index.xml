@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 OpenSearch 集群证书 on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/04-radondb-opensearch/11-configure-certificates/</link>
+    <description>Recent content in 配置 OpenSearch 集群证书 on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/04-radondb-opensearch/11-configure-certificates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>配置 OpenSearch 集群客户端证书</title>
+      <link>/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/</guid>
+      <description>本节介绍如何对接配置 OpenSearch 集群客户端证书。
+创建 OpenSearch 集群 修改 opensearch.yaml 文件。
+在 spec.general.additionalConfig 区域，增加 plugins.security.ssl.http.clientauth_mode: OPTIONAL 配置。
+集群开启 TLS 认证。
+apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 additionalConfig: plugins.security.ssl.http.clientauth_mode: OPTIONAL dashboards: version: 2.3.0 enable: true replicas: 1 resources: requests: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; limits: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; tls: enable: true generate: true confMgmt: smartScaler: true security: config: securityConfigSecret: # Pre create this secret with required security configs, to override the default settings name: securityconfig-secret adminCredentialsSecret: name: admin-credentials-secret tls: transport: generate: true http: generate: true nodePools: - component: masters replicas: 3 diskSize: &amp;#34;50Gi&amp;#34; persistence: pvc: storageClass: csi-qingcloud accessModes: - ReadWriteOnce nodeSelector: resources: requests: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; limits: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; roles: - &amp;#34;cluster_manager&amp;#34; - component: data-hot replicas: 2 diskSize: &amp;#34;80Gi&amp;#34; persistence: pvc: storageClass: csi-qingcloud accessModes: - ReadWriteOnce additionalConfig: node.</description>
+    </item>
+    
+    <item>
+      <title>配置 OpenSearch 集群服务端证书</title>
+      <link>/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/</guid>
+      <description>本节介绍如何配置 OpenSearch 集群服务端证书。
+服务端证书有以下两种生成方式：
+OpenSearch 集群内部自动生成证书(默认)，具有以下特点：
+有效期为 10 年。
+暂不支持证书更换或续签。
+该证书仅能在 Kubernetes 集群内部使用，无法用于 Kubernetes 外部访问。
+用户自定义证书，具有以下特点：
+自定义有效期。
+暂不支持证书更换或续签。
+该证书可用于从 Kubernetes 集群外部访问 OpenSearch 集群。
+OpenSearch 集群内部自动生成证书 在 OpenSearch Dashboards 上开启 TLS 认证。
+将 spec.dashboards.tls.enable 的值设置为 true。
+将 spec.dashboards.tls.generate 的值设置为 true。
+在 OpenSearch 集群上开启 TLS 认证。
+将 spec.security.tls.transport.generate 的值设置为 true。
+将 spec.security.tls.http.generate 的值设置为 true。
+配置文件如下所示：
+apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 dashboards: version: 2.</description>
+    </item>
+    
+  </channel>
+</rss>

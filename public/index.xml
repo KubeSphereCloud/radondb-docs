@@ -1,0 +1,2474 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RadonDB DMP 数据库管理平台</title>
+    <link>/</link>
+    <description>Recent content on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>产品概述</title>
+      <link>/v2.0/01-intro/01-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/01-intro/01-overview/</guid>
+      <description>RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。
+RadonDB DMP 提供一站式、可视化的云原生数据库全生命周期管理。支持一键部署数据库，统一管理所有数据库实例，快速定位潜在风险和故障，并即时监测全局指标状态，提高数据库管理效率。
+备注 在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件，需要在扩展市场（KubeSphere Marketplace）订阅安装后才能使用。
+有关更多信息，请参阅 KubeSphere 企业版使用文档的扩展组件管理章节。</description>
+    </item>
+    
+    <item>
+      <title>创建 Kafka 用户</title>
+      <link>/v2.0/10-radondb-kafka/04-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/04-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建 Kafka 用户。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击 Kafka 用户页签，然后点击创建。
+在创建用户对话框，设置用户名和密码，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 描述 用户名
+自定义用户名称。
+配置要求：只能包含小写字母、数字和连字符（_），最长 64 个字符。
+认证模式
+Kafka 的认证模式。支持 TLS 和 SCRAM-SHA-512。
+授权模式
+目前只支持简单授权。
+权限规则 1
+Kafka 上执行操作所需的用户权限。点击添加以添加多个权限规则。
+资源类型：规则适用的资源类型，支持主题、组、集群和事务 ID。
+资源匹配模式：资源名称的匹配模式，支持前缀匹配和逐字匹配。
+资源名称：资源的名称。
+操作：选择规则适用的操作。
+类型：目前规则类型只支持允许。
+在用户列表页面，将鼠标悬浮在加密密钥列的 CA 证书上，您可以下载证书，复制密码，并查看证书有效期。</description>
+    </item>
+    
+    <item>
+      <title>创建 MongoDB 实例</title>
+      <link>/v2.0/07-radondb-mongodb/01-install-radondb-mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/01-install-radondb-mongodb/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MongoDB 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在页面右侧选择新建 MongoDB 实例。
+在基本信息页签，设置 RadonDB MongoDB 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+MongoDB 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+MongoDB 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+MongoDB 实例所属的企业空间和项目。
+在应用设置页签，设置 MongoDB 实例的参数。
+参数 描述 版本
+MongoDB 应用的版本。
+内核版本
+MongoDB 数据库的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+MongoDB 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+节点数量
+MongoDB 实例的节点数量。参数值可以为 1、3、5、7。</description>
+    </item>
+    
+    <item>
+      <title>创建 MySQL 实例</title>
+      <link>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MySQL 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在页面右侧选择新建 MySQL 实例。
+在基本信息页签，设置 RadonDB MySQL 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+MySQL 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+MySQL 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+MySQL 实例所属的企业空间和项目。
+在应用设置页签，设置 MySQL 实例的参数。
+参数 描述 版本
+MySQL 应用的版本。
+内核版本
+MySQL 数据库的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+MySQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+备数据库
+用于确保高可用性的备数据库的数量，取值可以为 1、2 或 4。</description>
+    </item>
+    
+    <item>
+      <title>创建 OpenSearch 实例</title>
+      <link>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB OpenSearch 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在页面右侧选择新建 OpenSearch 实例。
+在基本信息页签，设置 RadonDB OpenSearch 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+OpenSearch 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+OpenSearch 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+OpenSearch 实例所属的企业空间和项目。
+在应用设置页签，设置 OpenSearch 实例的参数。
+参数 描述 版本
+OpenSearch 应用的版本。
+内核版本
+OpenSearch 数据库的内核版本。
+主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点设置
+资源：分配给每个节点的 CPU 和内存资源。
+主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点数量：OpenSearch 实例各类型节点的数量。主节点的数量默认为 3 且不能修改，其他节点数量可根据需要设置。
+存储类：节点使用的存储系统对应的存储类。默认值为 local。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷：每个节点使用的卷大小，单位为 GiB。每个主节点的卷大小默认为 20 GiB。控制面板节点和 Logstash 节点不能挂载卷。其他节点的卷大小可根据需要设置。</description>
+    </item>
+    
+    <item>
+      <title>创建 PostgreSQL 实例</title>
+      <link>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB PostgreSQL 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在页面右侧选择新建 PostgreSQL 实例。
+在基本信息页签，设置 RadonDB PostgreSQL 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+PostgreSQL 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+PostgreSQL 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+PostgreSQL 实例所属的企业空间和项目。
+在应用设置页签，设置 PostgreSQL 实例的参数。
+参数 描述 版本
+PostgreSQL 应用的版本。
+内核版本
+PostgreSQL 数据库的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+PostgreSQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+数据节点数量
+PostgreSQL 实例的数据节点数量。取值范围为 2 到 8。</description>
+    </item>
+    
+    <item>
+      <title>创建 RabbitMQ 实例</title>
+      <link>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB RabbitMQ 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在页面右侧选择新建 RabbitMQ 实例。
+在基本信息页签，设置 RadonDB RabbitMQ 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+RabbitMQ 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+RabbitMQ 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+RabbitMQ 实例所属的企业空间和项目。
+在应用设置页签，设置 RabbitMQ 实例的参数。
+参数 描述 版本
+RabbitMQ 应用的版本。
+内核版本
+RabbitMQ 的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+RabbitMQ 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+节点数量
+RabbitMQ 的节点数量。参数值可以为 1、3、5、7。</description>
+    </item>
+    
+    <item>
+      <title>创建 Redis Cluster 实例</title>
+      <link>/v2.0/05-radondb-redis-cluster/01-install-radondb-redis-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/01-install-radondb-redis-cluster/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Redis Cluster 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在页面右侧选择新建 Redis Cluster 实例。
+在基本信息页签，设置 RadonDB Redis Cluster 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+Redis Cluster 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+Redis Cluster 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+Redis Cluster 实例所属的企业空间和项目。
+在应用设置页签，设置 Redis Cluster 实例的参数。
+参数 描述 版本
+Redis Cluster 应用的版本。
+内核版本
+Redis Cluster 数据库的内核版本。
+CPU/内存
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。</description>
+    </item>
+    
+    <item>
+      <title>创建 Redis Sentinel 实例</title>
+      <link>/v2.0/06-radondb-redis-sentinel/01-install-radondb-redis-sentinel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/01-install-radondb-redis-sentinel/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Redis Sentinel 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在页面右侧选择新建 Redis Sentinel 实例。
+在基本信息页签，设置 RadonDB Redis Sentinel 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+Redis Sentinel 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+Redis Sentinel 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+RadonDB Redis Sentinel 实例所属的企业空间和项目。
+在应用设置页签，设置 Redis Sentinel 实例的参数。
+参数 描述 版本
+Redis Sentinel 应用的版本。
+内核版本
+Redis Sentinel 数据库的内核版本。
+CPU/内存
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。</description>
+    </item>
+    
+    <item>
+      <title>创建备份仓库</title>
+      <link>/v2.0/12-backup-management/01-create-a-backup-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/01-create-a-backup-repository/</guid>
+      <description>本节介绍如何创建 RadonDB 数据库的备份仓库，以存储在各数据库详情页的“备份管理”页签创建的备份。
+目前支持 S3 存储及本地存储两种存储类型。
+前提条件 准备好 S3 备份仓库所在的区域名称、S3 访问地址、访问密钥和访问密钥口令。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
+在页面右侧选择创建。
+参数 描述 数据库类型
+一种数据库类型只能创建一个备份仓库。一个备份仓库只能为一种数据库提供备份存储。
+为备份仓库指定一个数据库类型，以存储该类数据库的备份数据。
+备份仓库名称
+最长 63 个字符，只能包含小写字母、数字及分隔符(&amp;#39;-&amp;#39;)，且必须以小写字母或数字开头及结尾。
+bucket
+S3 备份仓库所在的区域（region）名称。
+访问地址
+S3 备份仓库的访问地址。
+访问密钥
+S3 备份仓库的访问密钥。
+加密密钥
+S3 备份仓库的访问密钥口令。
+描述
+对该备份仓库的描述信息。可包含任意字符，最长 256 个字符。
+点击确定。创建的备份仓库将显示在备份仓库管理页面的仓库列表中。
+在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份仓库。
+在列表右上角点击可刷新列表信息。
+在列表右上角点击可定制列表中显示的信息。</description>
+    </item>
+    
+    <item>
+      <title>创建数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建数据库用户。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签，然后点击创建。
+在创建用户对话框，设置用户名和密码，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 说明 用户名
+自定义用户名称。
+配置要求：用户名只能包含大写字母、小写字母、数字，必须以大写或小写字母开头，长度为 2 到 26 个字符。
+密码
+输入用户密码。
+配置要求：密码必须包含至少一个大写字母、一个小写字母、一个数字和一个特殊字符（!@#$%^&amp;amp;*_+-=），长度为 8 到 32 个字符。
+授权数据库
+输入授权访问的数据库名称。
+默认为*，表示授权全部数据库。仅支持输入一个数据库名称。
+权限
+选择用户的权限。可选择普通权限、高级权限或自定义权限。支持创建多个具有相同权限的用户。
+MySQL 实例创建成功后，将生成默认用户 root。root 是超级管理员用户，拥有对数据库的最高管理权限。该用户账号默认生成，不支持修改和删除。
+普通权限用户具备数据库操作使用权限，包括 ALTER、ALTER ROUTINE、CREATE、CREATE ROUTINE、CREATE TEMPORARY TABLES、CREATE VIEW、DELETE、DROP、EXECUTE、EVENT、INDEX、INSERT、LOCK TABLES、SELECT、SHOW VIEW、UPDATE、TRIGGER、REFERENCES 等数据库操作权限。
+高级权限用户具备数据库高级操作使用权限，除普通权限外，还具备 PROCESS、RELOAD 和 SHOW DATABASES 数据库操作权限。
+自定义权限用户的权限在 yaml 文件中进行设置。打开右上角的编辑 YAML，在 yaml 文件中自定义用户的权限。
+授权主机
+输入允许访问的主机 IP。</description>
+    </item>
+    
+    <item>
+      <title>创建数据库用户</title>
+      <link>/v2.0/05-radondb-redis-cluster/03-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/03-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建数据库用户。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签，然后点击创建。
+在创建用户对话框，设置用户名和密码，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 说明 用户名
+自定义用户名称。
+配置要求：用户名只能包含大写字母、小写字母、数字和下划线（_），必须以大写或小写字母开头，长度为 2 到 26 个字符。
+密码
+输入用户密码。
+配置要求：密码必须包含至少一个大写字母、一个小写字母、一个数字和一个特殊字符（!@#$%^&amp;amp;*_+-=），长度为 8 到 32 个字符。
+权限
+根据 Redis 官方规则设置 ACL 以控制用户的权限。
+备注 不支持创建 root 或以 radondb_ 开头的名称。
+不支持创建同名用户。</description>
+    </item>
+    
+    <item>
+      <title>创建数据库用户</title>
+      <link>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建数据库用户。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签，然后点击创建。
+在创建用户对话框，设置用户名和密码，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 说明 用户名
+自定义用户名称。
+配置要求：用户名只能包含大写字母、小写字母、数字和下划线（_），必须以大写或小写字母开头，长度为 2 到 26 个字符。
+密码
+输入用户密码。
+配置要求：密码必须包含至少一个大写字母、一个小写字母、一个数字和一个特殊字符（!@#$%^&amp;amp;*_+-=），长度为 8 到 32 个字符。
+权限
+根据 Redis 官方规则设置 ACL 以控制用户的权限。
+备注 不支持创建 root 或以 radondb_ 开头的名称。
+不支持创建同名用户。</description>
+    </item>
+    
+    <item>
+      <title>创建数据库用户</title>
+      <link>/v2.0/08-radondb-postgresql/03-manage-database-users/01-create-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/03-manage-database-users/01-create-a-database-user/</guid>
+      <description>本节介绍如何创建数据库用户。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签，然后点击创建。
+在创建用户对话框，设置用户名、密码和权限，然后点击确定。用户创建完成后将显示在用户列表中。
+参数 说明 用户名
+自定义用户名称。
+配置要求：用户名只能包含小写字母、数字和下划线（_），必须以小写字母开头，长度为 2 到 26 个字符。
+密码
+输入用户密码。
+配置要求：密码必须包含至少一个大写字母、一个小写字母、一个数字和一个特殊字符（!@#$%^&amp;amp;*_+-=），长度为 8 到 32 个字符。
+权限
+可选择普通权限或高级权限。支持创建多个具有相同权限的用户。
+普通权限用户具备创建表、索引、Schema 等数据库对象的管理权限。不能创建和管理其他账号。
+高级权限用户具备 Superuser、CREATEDB、CREATEROLE 权限，以及 REPLICATION 等创建数据库的管理权限。
+备注 不支持创建名为 postgres、pgautofailover_replicator 和 pgautofailover_monitor 的用户账号。
+不支持创建同名用户。</description>
+    </item>
+    
+    <item>
+      <title>创建主题</title>
+      <link>/v2.0/10-radondb-kafka/07-manage-topics/01-create-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/07-manage-topics/01-create-topics/</guid>
+      <description>本节介绍如何创建 RadonDB Kafka 主题。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击主题页签，然后点击创建。
+在创建主题对话框，输入主题名称，并设置分区数量和副本数量。
+点击高级设置，设置以下参数，点击确定。
+参数 描述 cleanup.policy
+Kafka 日志清理策略。支持删除和压缩。
+min.insync.replicas
+当生产者的 request.requird.acks 参数设置为 1 时，副本的最小数量。
+unclean.leader.election.enable
+是否允许不属于 ISR 的副本被选为领导。
+segment.ms
+段文件轮滚的最大时间间隔，单位为毫秒，最小值为 86400000。
+retention.ms
+日志文件最大保留时间，单位为毫秒。
+retention.bytes
+日志文件的大小上限。超过上限的日志文件将被删除。如果同时设置了 retention.ms 和 retention.bytes，日志文件将在达到任一阈值是被删除。参数值 -1 表示保留所有日志文件。
+max.message.bytes
+主题级别的消息大小上限。如果未设置此参数，系统将采用实例级别的消息大小上限 1 MB。</description>
+    </item>
+    
+    <item>
+      <title>开启 MySQL 数据库自动备份</title>
+      <link>/v2.0/02-radondb-mysql/06-manage-database-backup/01-enable-database-auto-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/06-manage-database-backup/01-enable-database-auto-backup/</guid>
+      <description>本节介绍如何开启 RadonDB MySQL 数据库自动备份。
+前提条件 RadonDB MySQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击设置自动备份旁的设置。
+在设置自动备份策略对话框，开启下方的滑块，设置备份周期、备份时间段、备份保留期限和备份保留份数，点击确定。
+设置完成后，可继续点击设置编辑自动备份策略。</description>
+    </item>
+    
+    <item>
+      <title>开启 PostgreSQL 数据库自动备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/</guid>
+      <description>本节介绍如何开启 RadonDB PostgreSQL 数据库自动备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击设置自动备份旁的设置。
+在设置自动备份策略对话框，开启下方的滑块，设置备份周期、备份时间段、备份保留期限和备份保留份数，点击确定。
+设置完成后，可继续点击设置编辑自动备份策略。</description>
+    </item>
+    
+    <item>
+      <title>快速入门</title>
+      <link>/v2.0/10-radondb-kafka/01-quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/01-quickstart/</guid>
+      <description>本节介绍如何快速创建 RadonDB Kafka 实例并访问 Kafka。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 创建 Kafka 实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在页面右侧选择新建 Kafka 实例。
+在基本信息页签，设置 RadonDB Kafka 实例的基本信息和位置，然后点击下一步。
+在应用设置页签，设置 Kafka 的参数，然后点击确定。
+备注 有关参数的具体解释，请参阅创建 Kafka 实例。
+创建 Kafka 主题 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击主题页签，然后点击创建。
+在创建主题对话框，输入主题名称，如 demo-topic, 并设置分区数量和副本数量，点击确定。
+创建 Kafka 用户 在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击 Kafka 用户页签，然后点击创建。
+在创建用户对话框，设置用户名，如 demo-user1，并配置以下两条规则：
+规则 1: 允许“主题”名称为 demo-topic 的所有操作权限。</description>
+    </item>
+    
+    <item>
+      <title>配置 OpenSearch 集群客户端证书</title>
+      <link>/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/</guid>
+      <description>本节介绍如何对接配置 OpenSearch 集群客户端证书。
+创建 OpenSearch 集群 修改 opensearch.yaml 文件。
+在 spec.general.additionalConfig 区域，增加 plugins.security.ssl.http.clientauth_mode: OPTIONAL 配置。
+集群开启 TLS 认证。
+apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 additionalConfig: plugins.security.ssl.http.clientauth_mode: OPTIONAL dashboards: version: 2.3.0 enable: true replicas: 1 resources: requests: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; limits: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; tls: enable: true generate: true confMgmt: smartScaler: true security: config: securityConfigSecret: # Pre create this secret with required security configs, to override the default settings name: securityconfig-secret adminCredentialsSecret: name: admin-credentials-secret tls: transport: generate: true http: generate: true nodePools: - component: masters replicas: 3 diskSize: &amp;#34;50Gi&amp;#34; persistence: pvc: storageClass: csi-qingcloud accessModes: - ReadWriteOnce nodeSelector: resources: requests: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; limits: memory: &amp;#34;1Gi&amp;#34; cpu: &amp;#34;500m&amp;#34; roles: - &amp;#34;cluster_manager&amp;#34; - component: data-hot replicas: 2 diskSize: &amp;#34;80Gi&amp;#34; persistence: pvc: storageClass: csi-qingcloud accessModes: - ReadWriteOnce additionalConfig: node.</description>
+    </item>
+    
+    <item>
+      <title>编辑 Kafka 用户</title>
+      <link>/v2.0/10-radondb-kafka/04-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/04-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑 Kafka 用户。
+Kafka 不支持编辑已创建用户的名称。
+前提条件 RadonDB Kafka 实例状态为运行中。
+已创建 Kafka 用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击 Kafka 用户页签打开 Kafka 用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，您可以修改认证模式和权限规则。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>编辑数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑数据库用户。
+MySQL 不支持编辑已创建用户的名称。
+前提条件 RadonDB MySQL 实例状态为运行中。
+已创建数据库用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，您可以修改密码、授权数据库、权限和授权主机信息。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>编辑数据库用户</title>
+      <link>/v2.0/05-radondb-redis-cluster/03-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/03-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑数据库用户。
+Redis Cluster 不支持编辑已创建用户的名称。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+已创建数据库用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，您可以修改密码和权限。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>编辑数据库用户</title>
+      <link>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑数据库用户。
+Redis Sentinel 不支持编辑已创建用户的名称。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+已创建数据库用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，您可以修改密码和权限。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>编辑数据库用户</title>
+      <link>/v2.0/08-radondb-postgresql/03-manage-database-users/02-edit-a-database-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/03-manage-database-users/02-edit-a-database-user/</guid>
+      <description>本节介绍如何编辑数据库用户。
+PostgreSQL 只支持修改已创建用户的密码，不支持编辑名称和权限。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+已创建数据库用户。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要编辑的用户右侧点击，然后在下拉列表中选择编辑信息。
+在编辑用户对话框，修改密码。修改完成后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>编辑主题</title>
+      <link>/v2.0/10-radondb-kafka/07-manage-topics/02-edit-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/07-manage-topics/02-edit-topics/</guid>
+      <description>本节介绍如何编辑 RadonDB Kafka 主题。
+前提条件 RadonDB Kafka 实例状态为运行中。
+已创建 Kafka 主题。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击主题页签打开主题列表。
+在要编辑的主题右侧点击，然后在下拉列表中选择编辑信息。
+在弹出的编辑主题对话框，您可以修改高级设置信息，点击确定。</description>
+    </item>
+    
+    <item>
+      <title>查看数据库备份</title>
+      <link>/v2.0/12-backup-management/02-backup-data-management/01-view-backup-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/02-backup-data-management/01-view-backup-list/</guid>
+      <description>本节介绍如何查看所有数据库的备份。
+目前仅支持对 MySQL 和 PostgreSQL 数据库进行备份。
+前提条件 已在 MySQL 或 PostgreSQL 数据库详情页的“备份管理”页签创建了备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份数据管理。
+点击 MySQL 和 PostgreSQL 页签查看对应数据库的备份。
+参数 说明 名称
+备份任务的名称。
+状态
+主要包含以下状态：
+备份成功：备份任务成功运行。
+备份失败：备份任务运行失败。
+备份中：正在进行备份。
+备份类型
+手动备份或自动备份。
+大小
+备份文件的大小。
+备份开始时间
+开始备份的时间。
+备份结束时间
+结束备份的时间。
+在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份。
+在列表右上角点击可刷新列表信息。
+在列表右上角点击可定制列表中显示的信息。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/02-radondb-mysql/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB MySQL 实例的运行状态。
+前提条件 已创建 RadonDB MySQL 实例。更多信息，请参阅创建 MySQL 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+已创建的 MySQL 实例将显示在 MySQL 实例列表中。
+参数 描述 名称
+MySQL 实例在 KubeSphere 企业版平台的名称。
+状态
+MySQL 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+MySQL 实例所属的企业空间。
+项目
+MySQL 实例所属的项目。
+内核版本
+MySQL 数据库的内核版本。
+创建时间
+MySQL 实例的创建时间。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+MySQL 实例所属的集群。
+企业空间
+MySQL 实例所属的企业空间。
+项目
+MySQL 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/04-radondb-opensearch/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB OpenSearch 实例的运行状态。
+前提条件 已创建 RadonDB OpenSearch 实例。更多信息，请参阅创建 OpenSearch 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+已创建的 OpenSearch 实例将显示在 OpenSearch 实例列表中。
+参数 描述 名称
+OpenSearch 实例在 KubeSphere 企业版平台的名称。
+状态
+OpenSearch 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+OpenSearch 实例所属的企业空间。
+项目
+OpenSearch 实例所属的项目。
+内核版本
+OpenSearch 数据库的内核版本。
+创建时间
+OpenSearch 实例的创建时间。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+OpenSearch 实例所属的集群。
+企业空间
+OpenSearch 实例所属的企业空间。
+项目
+OpenSearch 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/05-radondb-redis-cluster/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB Redis Cluster 实例的运行状态。
+前提条件 已创建 RadonDB Redis Cluster 实例。更多信息，请参阅创建 Redis Cluster 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+已创建的 Redis Cluster 实例将显示在 Redis Cluster 实例列表中。
+参数 描述 名称
+Redis Cluster 实例在 KubeSphere 企业版平台的名称。
+状态
+Redis Cluster 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+Redis Cluster 实例所属的企业空间。
+项目
+Redis Cluster 实例所属的项目。
+内核版本
+Redis Cluster 数据库的内核版本。
+创建时间
+Redis Cluster 实例的创建时间。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/06-radondb-redis-sentinel/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB Redis Sentinel 实例的运行状态。
+前提条件 已创建 RadonDB Redis Sentinel 实例。更多信息，请参阅创建 Redis Sentinel 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+已创建的 Redis Sentinel 实例将显示在 Redis Sentinel 实例列表中。
+参数 描述 名称
+Redis Sentinel 实例在 KubeSphere 企业版平台的名称。
+状态
+Redis Sentinel 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+Redis Sentinel 实例所属的企业空间。
+项目
+Redis Sentinel 实例所属的项目。
+内核版本
+Redis Sentinel 数据库的内核版本。
+创建时间
+Redis Sentinel 实例的创建时间。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/07-radondb-mongodb/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB MongoDB 实例的运行状态。
+前提条件 已创建 RadonDB MongoDB 实例。更多信息，请参阅创建 MongoDB 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+已创建的 MongoDB 实例将显示在 MongoDB 实例列表中。
+参数 描述 名称
+MongoDB 实例在 KubeSphere 企业版平台的名称。
+状态
+MongoDB 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+MongoDB 实例所属的企业空间。
+项目
+MongoDB 实例所属的项目。
+内核版本
+MongoDB 数据库的内核版本。
+创建时间
+MongoDB 实例的创建时间。
+在 MongoDB 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+MongoDB 实例所属的集群。
+企业空间
+MongoDB 实例所属的企业空间。
+项目
+MongoDB 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/08-radondb-postgresql/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB PostgreSQL 实例的运行状态。
+前提条件 已创建 RadonDB PostgreSQL 实例。更多信息，请参阅创建 PostgreSQL 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+已创建的 PostgreSQL 实例将显示在 PostgreSQL 实例列表中。
+参数 描述 名称
+PostgreSQL 实例在 KubeSphere 企业版平台的名称。
+状态
+PostgreSQL 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+PostgreSQL 实例所属的企业空间。
+项目
+PostgreSQL 实例所属的项目。
+内核版本
+PostgreSQL 数据库的内核版本。
+创建时间
+PostgreSQL 实例的创建时间。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+PostgreSQL 实例所属的集群。
+企业空间
+PostgreSQL 实例所属的企业空间。
+项目
+PostgreSQL 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB RabbitMQ 实例的运行状态。
+前提条件 已创建 RadonDB RabbitMQ 实例。更多信息，请参阅创建 RabbitMQ 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+已创建的 RabbitMQ 实例将显示在 RabbitMQ 实例列表中。
+参数 描述 名称
+RabbitMQ 实例在 KubeSphere 企业版平台的名称。
+状态
+RabbitMQ 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+RabbitMQ 实例所属的企业空间。
+项目
+RabbitMQ 实例所属的项目。
+内核版本
+RabbitMQ 的内核版本。
+创建时间
+RabbitMQ 实例的创建时间。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+RabbitMQ 实例所属的集群。
+企业空间
+RabbitMQ 实例所属的企业空间。
+项目
+RabbitMQ 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>创建 Kafka 实例</title>
+      <link>/v2.0/10-radondb-kafka/02-install-radondb-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/02-install-radondb-kafka/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Kafka 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在页面右侧选择新建 Kafka 实例。
+在基本信息页签，设置 RadonDB Kafka 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+Kafka 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+Kafka 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+Kafka 实例所属的企业空间和项目。
+在应用设置页签，设置 Kafka 实例的参数。
+参数 描述 版本
+Kafka 应用的版本。
+内核版本
+Kafka 的内核版本。
+资源
+分配给每个 Kafka/ZooKeeper 节点的 CPU 和内存资源。
+Kafka/ZooKeeper 节点数量
+Kafka/ZooKeeper 节点的数量。
+存储类
+Kafka/ZooKeeper 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷</description>
+    </item>
+    
+    <item>
+      <title>创建 MySQL 数据库备份</title>
+      <link>/v2.0/02-radondb-mysql/06-manage-database-backup/02-create-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/06-manage-database-backup/02-create-database-backup/</guid>
+      <description>本节介绍如何创建 RadonDB MySQL 数据库备份。
+备注 备份过程可能会导致数据库服务压力过大，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击创建备份。
+在创建备份对话框，输入备份任务的名称，然后点击确定。
+数据库备份将显示在备份列表中。</description>
+    </item>
+    
+    <item>
+      <title>创建 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/</guid>
+      <description>本节介绍如何创建 RadonDB PostgreSQL 数据库备份。
+备注 备份过程可能会导致数据库服务压力过大，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已在运维管理 &amp;gt; 备份管理 &amp;gt; 备份仓库管理中创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签打开数据库备份列表。
+点击创建备份。
+在创建备份对话框，输入备份任务的名称，然后点击确定。
+数据库备份将显示在备份列表中。</description>
+    </item>
+    
+    <item>
+      <title>从备份恢复数据库实例</title>
+      <link>/v2.0/12-backup-management/02-backup-data-management/02-restore-from-a-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/02-backup-data-management/02-restore-from-a-backup/</guid>
+      <description>本节介绍如何从备份恢复数据库实例。
+前提条件 已在 MySQL 或 PostgreSQL 数据库详情页的“备份管理”页签创建了备份，且状态为备份成功。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份数据管理。
+点击 MySQL 和 PostgreSQL 页签查看对应数据库的备份。
+找到目标备份，点击，选择从备份恢复。
+在基本信息页签，编辑将通过备份创建的实例名称，然后点击下一步。
+在应用设置页签，确认将创建的实例的参数。
+点击确定，将自动在对应的数据库页面创建新的实例。
+备注 恢复的新实例的磁盘规格必须大于或等于原实例，以免因磁盘不足导致恢复失败。</description>
+    </item>
+    
+    <item>
+      <title>进入数据库管理平台</title>
+      <link>/v2.0/01-intro/02-access-dmp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/01-intro/02-access-dmp/</guid>
+      <description>本节介绍如何从 KubeSphere 企业版 v4.0 Web 控制台进入 RadonDB DMP 数据库管理平台，并查看其概览信息。
+前提条件 以 platform-admin 角色登录到 KubeSphere 企业版 Web 控制台。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的用户和角色管理章节。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的扩展组件管理章节。
+操作步骤 打开 Web 浏览器，在地址栏中输入 KubeSphere 企业版 Web 控制台的 IP 地址和端口号。
+在 KubeSphere 企业版登录页面，输入用户信息然后点击登录。
+点击顶部导航栏上的图标，点击 RadonDB DMP，进入数据库管理平台。
+在概览页面，查看 RadonDB DMP 提供的数据库服务、中间件服务、备份管理、告警状态等的概览信息。
+备注 对于多集群环境，在概览上方的下拉菜单中切换集群，为不同集群管理数据库实例。
+下拉菜单中显示的集群为您配置集群 Agent 时选择的集群。</description>
+    </item>
+    
+    <item>
+      <title>配置 OpenSearch 集群服务端证书</title>
+      <link>/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/</guid>
+      <description>本节介绍如何配置 OpenSearch 集群服务端证书。
+服务端证书有以下两种生成方式：
+OpenSearch 集群内部自动生成证书(默认)，具有以下特点：
+有效期为 10 年。
+暂不支持证书更换或续签。
+该证书仅能在 Kubernetes 集群内部使用，无法用于 Kubernetes 外部访问。
+用户自定义证书，具有以下特点：
+自定义有效期。
+暂不支持证书更换或续签。
+该证书可用于从 Kubernetes 集群外部访问 OpenSearch 集群。
+OpenSearch 集群内部自动生成证书 在 OpenSearch Dashboards 上开启 TLS 认证。
+将 spec.dashboards.tls.enable 的值设置为 true。
+将 spec.dashboards.tls.generate 的值设置为 true。
+在 OpenSearch 集群上开启 TLS 认证。
+将 spec.security.tls.transport.generate 的值设置为 true。
+将 spec.security.tls.http.generate 的值设置为 true。
+配置文件如下所示：
+apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 dashboards: version: 2.</description>
+    </item>
+    
+    <item>
+      <title>查看 MySQL 数据库备份</title>
+      <link>/v2.0/02-radondb-mysql/06-manage-database-backup/03-view-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/06-manage-database-backup/03-view-database-backup/</guid>
+      <description>本节介绍如何查看 RadonDB MySQL 数据库备份。
+前提条件 RadonDB MySQL 实例状态为运行中。
+您已经创建了 MySQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，查看以下信息。
+参数 说明 名称
+备份任务的名称。
+状态
+主要包含以下状态：
+备份成功：备份任务成功运行。
+备份失败：备份任务运行失败。
+备份中：正在进行备份。
+备份类型
+手动备份或自动备份。
+大小
+备份文件的大小。
+备份开始时间
+开始备份的时间。
+备份结束时间
+结束备份的时间。
+在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份。
+在列表右上角点击可刷新列表信息。
+在列表右上角点击可定制列表中显示的信息。
+备注 数据库备份也会显示在运维管理 &amp;gt; 备份管理 &amp;gt; 备份数据管理页面。</description>
+    </item>
+    
+    <item>
+      <title>查看 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/03-view-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/03-view-database-backup/</guid>
+      <description>本节介绍如何查看 RadonDB PostgreSQL 数据库备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，查看以下信息。
+参数 说明 名称
+备份任务的名称。
+状态
+主要包含以下状态：
+备份成功：备份任务成功运行。
+备份失败：备份任务运行失败。
+备份中：正在进行备份。
+备份类型
+手动备份或自动备份。
+大小
+备份文件的大小。
+备份开始时间
+开始备份的时间。
+备份结束时间
+结束备份的时间。
+在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份。
+在列表右上角点击可刷新列表信息。
+在列表右上角点击可定制列表中显示的信息。
+备注 数据库备份也会显示在运维管理 &amp;gt; 备份管理 &amp;gt; 备份数据管理页面。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/10-radondb-kafka/03-view-kafka-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/03-view-kafka-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB Kafka 实例的运行状态。
+前提条件 已创建 RadonDB Kafka 实例。更多信息，请参阅创建 Kafka 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+已创建的 Kafka 实例将显示在 Kafka 实例列表中。
+参数 描述 名称
+Kafka 实例在 KubeSphere 企业版平台的名称。
+状态
+Kafka 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+Kafka 实例所属的企业空间。
+项目
+Kafka 实例所属的项目。
+内核版本
+Kafka 的内核版本。
+创建时间
+Kafka 实例的创建时间。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+Kafka 实例所属的集群。
+企业空间
+Kafka 实例所属的企业空间。
+项目
+Kafka 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>访问 MongoDB 数据库</title>
+      <link>/v2.0/07-radondb-mongodb/03-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/03-access-the-database/</guid>
+      <description>本节主要介绍如何在 Kubesphere 集群内部连接 RadonDB MongoDB 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB MongoDB 实例状态为运行中。
+操作步骤 在 Kubesphere 集群内部创建一个 Pod 作为 MongoDB 客户端。
+将鼠标悬停至 Web 控制台右下角的，点击 kubectl，在弹出的对话框执行以下命令创建一个 client.yaml 文件。
+vi client.yaml 文件内容如下，其中 namespace 的值必须与 MongoDB 数据库所在的企业空间名称一致。
+apiVersion: v1 kind: Pod metadata: name: mongoclient namespace: default spec: containers: - name: mongo image: radondb/mongodb:4.2.19 执行以下命令，创建一个名为 mongoclient 的 Pod。
+kubectl apply -f client.yaml 执行以下命令访问 MongoDB 数据库。
+kubectl exec -it mongoclient -n &amp;lt;namespace&amp;gt; -- mongo mongodb://&amp;lt;username&amp;gt;:&amp;lt;password&amp;gt;@&amp;lt;ip:port&amp;gt;/?</description>
+    </item>
+    
+    <item>
+      <title>访问 OpenSearch 数据库</title>
+      <link>/v2.0/04-radondb-opensearch/03-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/03-access-the-database/</guid>
+      <description>Dashboards 是 OpenSearch 的可视化工具，提供面向用户的 OpenSearch 插件管理服务，包括安全性、警报、索引状态管理、 SQL 管理等插件。
+本节介绍如何访问 OpenSearch 数据库的 Dashboards。
+前提条件 如果使用外部读写地址，取决于您的网络环境，您可能需要配置流量转发和防火墙规则。有关具体操作请联系您的网络环境管理员。
+RadonDB OpenSearch 实例状态为运行中。
+已获取 RadonDB OpenSearch 数据库用户名和密码。如果您在创建 RadonDB OpenSearch 实例时未修改过用户名和密码，此处默认用户名为 admin，默认密码为 RadonDB@123。如果您修改过用户名和密码，请使用修改后的用户名和密码登录。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入项目。
+点击应用负载 &amp;gt; 服务，搜索并点击新建的 OpenSearch 实例的 Dashboards 服务进入详情页面。
+点击更多操作 &amp;gt; 编辑外部访问。
+将 Dashboards 服务的访问模式设置为 NodePort，点击确定。
+进入 DMP 数据库管理平台，在左侧导航栏点击 OpenSearch，然后点击已创建的 OpenSearch 实例进入详情页面。
+在页面左侧的访问地址区域，查看控制面板地址。
+在浏览器输入 http://dashboard_IP:dashboard_port/ 进入 OpenSearch Dashboards 登录页面，输入账户名和密码。
+备注 请将 dashboard_IP 和 dashboard_port 替换成实际的值。
+取决于 Kubernetes 集群的部署位置，您可能需要在安全组中放行端口并配置相关的端口转发规则。</description>
+    </item>
+    
+    <item>
+      <title>删除 Kafka 用户</title>
+      <link>/v2.0/10-radondb-kafka/04-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/04-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除 Kafka 用户。
+前提条件 RadonDB Kafka 实例状态为运行中。
+已创建 Kafka 用户。
+删除单个 Kafka 用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击 Kafka 用户页签打开 Kafka 用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除 Kafka 用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击 Kafka 用户页签打开 Kafka 用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库备份</title>
+      <link>/v2.0/12-backup-management/02-backup-data-management/03-delete-a-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/02-backup-data-management/03-delete-a-backup/</guid>
+      <description>本节介绍如何删除数据库备份。
+前提条件 已在 MySQL 或 PostgreSQL 数据库详情页的“备份管理”页签创建了备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份数据管理。
+点击 MySQL 和 PostgreSQL 页签查看对应数据库的备份。
+找到目标备份，点击，选择删除。
+在弹出的删除对话框，输入备份名称，点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库用户</title>
+      <link>/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除数据库用户。
+前提条件 RadonDB MySQL 实例状态为运行中。
+已创建数据库用户。
+删除单个数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库用户</title>
+      <link>/v2.0/05-radondb-redis-cluster/03-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/03-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除数据库用户。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+已创建数据库用户。
+删除单个数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库用户</title>
+      <link>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/03-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除数据库用户。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+已创建数据库用户。
+删除单个数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除数据库用户</title>
+      <link>/v2.0/08-radondb-postgresql/03-manage-database-users/03-delete-database-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/03-manage-database-users/03-delete-database-users/</guid>
+      <description>本节介绍如何删除数据库用户。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+已创建数据库用户。
+删除单个数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+在需要删除的用户右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入用户的名称，然后点击确定。
+批量删除数据库用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击数据库用户页签打开数据库用户列表。
+选择需要删除的用户左侧的复选框，然后在列表上方点击删除。
+在删除对话框，输入用户的名称，然后点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除主题</title>
+      <link>/v2.0/10-radondb-kafka/07-manage-topics/03-delete-topics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/07-manage-topics/03-delete-topics/</guid>
+      <description>本节介绍如何删除 RadonDB Kafka 主题。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击主题页签打开主题列表。
+在目标主题右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入主题名称，点击确定。</description>
+    </item>
+    
+    <item>
+      <title>从备份恢复 MySQL 数据库</title>
+      <link>/v2.0/02-radondb-mysql/06-manage-database-backup/04-restore-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/06-manage-database-backup/04-restore-database/</guid>
+      <description>本节介绍如何从备份恢复 RadonDB MySQL 数据库。
+前提条件 RadonDB MySQL 实例状态为运行中。
+您已经创建了 MySQL 数据库备份，且状态为备份成功。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份任务，点击，选择从备份恢复。
+在基本信息页签，编辑将通过备份创建的实例名称，然后点击下一步。
+在应用设置页签，确认将创建的实例的参数。
+点击确定，将自动创建新的 RadonDB MySQL 实例。
+备注 恢复的新实例的磁盘规格必须大于或等于原实例，以免因磁盘不足导致恢复失败。</description>
+    </item>
+    
+    <item>
+      <title>从备份恢复 PostgreSQL 数据库</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/04-restore-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/04-restore-database/</guid>
+      <description>本节介绍如何从备份恢复 RadonDB PostgreSQL 数据库。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份，且状态为备份成功。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份任务，点击，选择从备份恢复。
+在基本信息页签，编辑将通过备份创建的实例名称，然后点击下一步。
+在应用设置页签，确认将创建的实例的参数。
+点击确定，将自动创建新的 RadonDB PostgreSQL 实例。
+备注 恢复的新实例的磁盘规格必须大于或等于原实例，以免因磁盘不足导致恢复失败。</description>
+    </item>
+    
+    <item>
+      <title>访问 MySQL 数据库</title>
+      <link>/v2.0/02-radondb-mysql/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/04-access-the-database/</guid>
+      <description>本节介绍如何访问 RadonDB MySQL 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB MySQL 实例状态为运行中。
+已获取 MySQL 数据库用户名和密码。有关更多信息，请参阅创建数据库用户。
+通过 KubeSphere 企业版平台访问 以下演示在 KubeSphere 企业版平台访问 RadonDB MySQL 的方式。
+在 KubeSphere 企业版平台右下角工具箱中选择 kubectl 工具，通过 kubectl 工具访问 RadonDB MySQL。
+连接 RadonDB MySQL 数据库的命令如下：
+kubectl exec -it &amp;lt;pod_name&amp;gt; -c mysql -n &amp;lt;project_name&amp;gt; -- mysql --user=&amp;lt;user_name&amp;gt; --password=&amp;lt;user_password&amp;gt; 参数说明：
+pod_name 为 MySQL 数据库所在的容器组名称
+project_name 为 MySQL 数据库所在的项目名称
+user_name 为 radondb
+user_password 为 RadonDB@123
+通过 mysql-client 访问 备注 使用如下方式，需提前安装可用于连接 MySQL 数据库的客户端工具。</description>
+    </item>
+    
+    <item>
+      <title>访问 PostgreSQL 数据库</title>
+      <link>/v2.0/08-radondb-postgresql/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/04-access-the-database/</guid>
+      <description> 本节介绍如何访问 RadonDB PostgreSQL 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情页右侧的概览区域，查看容器组的名称。
+执行以下命令访问 PostgreSQL 数据库：
+kubectl exec -it -n &amp;lt;namespace&amp;gt; &amp;lt;pod_name&amp;gt; -- bash &amp;lt;namespace&amp;gt;：PostgreSQL 实例所在的命名空间（即项目名称）。
+&amp;lt;pod_name&amp;gt;：PostgreSQL 容器组的名称。
+示例命令如下所示：
+kubectl exec -it -n test radondb-cd5s9b-autofailover-0-0 -- bash </description>
+    </item>
+    
+    <item>
+      <title>访问 RabbitMQ</title>
+      <link>/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/</guid>
+      <description>本节介绍如何访问 RadonDB RabbitMQ。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 根据是否配置 TLS，访问 RabbitMQ 的方式略有不同。
+未配置 TLS 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在详情页左侧，查看访问地址，示例如下。
+在参数管理页签，查看默认的用户名 default_user（默认为 guest）和用户名密码 default_pass（默认为 guest）。
+将鼠标悬停至 Web 控制台右下角的，点击 kubectl，在弹出的对话框执行以下命令访问 RabbitMQ。
+若在集群内部访问 RabbitMQ，执行以下命令：
+rabbitmqadmin --host=&amp;lt;instance_name&amp;gt;.&amp;lt;namespace&amp;gt; --port=15672 --username=&amp;lt;user&amp;gt; --password=&amp;lt;password&amp;gt; &amp;lt;instance_name&amp;gt;：RabbitMQ 实例的名称。
+&amp;lt;namespace&amp;gt;：RabbitMQ 实例所在的命名空间（即项目名称）。
+port 默认为 15672，可以不指定 --port 参数。
+&amp;lt;user&amp;gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户名。
+&amp;lt;password&amp;gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户的密码。
+示例命令如下：
+rabbitmqadmin --host=radondb-feoed2.test --port=15672 --username=guest --password=guest 若在集群外部访问 RabbitMQ，执行以下命令：</description>
+    </item>
+    
+    <item>
+      <title>访问 Kafka </title>
+      <link>/v2.0/10-radondb-kafka/05-access-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/05-access-kafka/</guid>
+      <description>本节介绍如何访问 RadonDB Kafka。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB Kafka 实例状态为运行中。
+已安装用于访问 Kafka 的客户端。
+下载 CA 证书和用户证书 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面左侧的传输密码区域，下载 CA 证书并保存密码。
+在页面右侧点击 Kafka 用户页签，将鼠标悬浮在加密密钥列的 CA 证书上，下载用户证书并保存密码。
+修改 Kafka 配置文件 RadonDB Kafka 支持三种认证类型：TLS、SCRAM-SHA-512 和无需认证。其使用的认证类型可在详情页的参数管理页签中查看。不同的认证模式下，配置文件的修改方式不同。
+在修改配置文件之前，请先下载并解压 Kafka 客户端二进制包。
+TLS 认证类型 备注 当认证类型为 TLS 时，参数管理页签的 TLS 参数不能设置为 false。
+在 Kafka 二进制包中的 config/producer.properties 和 config/consumer.properties 文件末尾添加下面的内容。
+#在文件末尾添加以下内容。 security.protocol=ssl ssl.truststore.location=&amp;lt;ca.p12&amp;gt; ssl.truststore.password=&amp;lt;truststore_password&amp;gt; ssl.truststore.type=pkcs12 ssl.keystore.location=&amp;lt;user.p12&amp;gt; ssl.keystore.password=&amp;lt;keystore_password&amp;gt; ssl.</description>
+    </item>
+    
+    <item>
+      <title>访问 Redis Cluster 数据库</title>
+      <link>/v2.0/05-radondb-redis-cluster/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/04-access-the-database/</guid>
+      <description>本节介绍如何访问 RadonDB Redis Cluster 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+将鼠标悬停至 Web 控制台右下角的，点击 kubectl，在弹出的对话框执行以下命令进入 Redis 数据库。
+kubectl exec -it -n &amp;lt;namespace&amp;gt; &amp;lt;name&amp;gt;-leader-0 -- sh &amp;lt;namespace&amp;gt;：Redis Cluster 实例所在的命名空间（即项目名称）。
+&amp;lt;name&amp;gt;：Redis Cluster 实例的名称。
+连接 Redis Cluster 数据库。
+redis-cli -h &amp;lt;redis_instance_address&amp;gt; -p &amp;lt;port&amp;gt; -c &amp;lt;redis_instance_address&amp;gt;： Redis Cluster 数据库的连接地址，如 10.233.85.29。可在实例详情页面的概览区域查看对应的容器组 IP 地址，请根据实际地址替换。
+&amp;lt;port&amp;gt;： Redis Cluster 数据库的端口号，默认为 6379。</description>
+    </item>
+    
+    <item>
+      <title>访问 Redis Sentinel 数据库</title>
+      <link>/v2.0/06-radondb-redis-sentinel/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/04-access-the-database/</guid>
+      <description>本节介绍如何访问 RadonDB Redis Sentinel 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+将鼠标悬停至 Web 控制台右下角的，点击 kubectl，在弹出的对话框执行以下命令进入 Redis 数据库。
+kubectl exec -it -n &amp;lt;namespace&amp;gt; &amp;lt;name&amp;gt; -- sh &amp;lt;namespace&amp;gt;：Redis Sentinel 实例所在的命名空间（即项目名称）。
+&amp;lt;name&amp;gt;：Redis Sentinel 实例的名称，如 radondb-mfncrc-sentinel-2。
+连接 Redis Sentinel 数据库。
+redis-cli -h &amp;lt;redis_instance_address&amp;gt; -p &amp;lt;port&amp;gt; &amp;lt;redis_instance_address&amp;gt;：Redis Sentinel 数据库的连接地址，如 10.233.116.42。可在实例详情页面的概览区域查看连接地址，请根据实际地址替换。
+&amp;lt;port&amp;gt;：Redis Sentinel 数据库的端口号，默认为 6379。
+连接示例如下：
+redis-cli -h 10.</description>
+    </item>
+    
+    <item>
+      <title>删除 MySQL 数据库备份</title>
+      <link>/v2.0/02-radondb-mysql/06-manage-database-backup/05-delete-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/06-manage-database-backup/05-delete-database-backup/</guid>
+      <description>本节介绍如何删除 RadonDB MySQL 数据库备份。
+前提条件 RadonDB MySQL 实例状态为运行中。
+您已经创建了 MySQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份，点击，选择删除。
+在弹出的删除对话框，输入备份名称，点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 PostgreSQL 数据库备份</title>
+      <link>/v2.0/08-radondb-postgresql/06-manage-database-backup/05-delete-database-backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/06-manage-database-backup/05-delete-database-backup/</guid>
+      <description>本节介绍如何删除 RadonDB PostgreSQL 数据库备份。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+您已经创建了 PostgreSQL 数据库备份。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面右侧点击备份管理页签，找到目标备份，点击，选择删除。
+在弹出的删除对话框，输入备份名称，点击确定。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/04-radondb-opensearch/05-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/05-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB OpenSearch 数据库的配置参数。
+RadonDB OpenSearch 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，OpenSearch 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+修改配置参数 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 thread_pool.write.queue_size
+线程池写队列的大小。取值范围为 1000 ~ 20000， 默认值为 10000。
+thread_pool.search.queue_size
+线程池搜索队列的大小。取值范围为 1000 ~ 20000， 默认值为 1000。
+action.destructive_requires_name
+是否在删除索引时禁止使用通配符和 _all 。您可以将此参数设置为 false，以允许使用通配符和 _all。默认值为 true。
+http.cors.enabled
+是否启用跨域资源共享（CORS）。默认值为 false。
+http.cors.allow-origin
+可用于跨域资源共享（CORS）的域（origin）。
+indices.fielddata.cache.size
+可用作字段数据缓存的最大堆内存。默认值为 -1b。
+indices.memory.index_buffer_size
+分配给节点并由所有分片作为索引缓冲区共享的堆内存大小。参数值可以为百分比或字节数。默认值为 10%。
+indices.queries.cache.size
+过滤器缓存的内存大小。取值可以为百分比（例如 5%）或确切值（例如 512mb）。默认值为10%。默认值为 10%。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/07-radondb-mongodb/05-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/05-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB MongoDB 数据库的配置参数。
+RadonDB MongoDB 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，MongoDB 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB MongoDB 实例状态为运行中。
+修改配置参数 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在 MongoDB 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 port
+MongoDB 服务器监听的端口号。默认值为 27017。
+oplogSizeMB
+oplog 文件的大小上限，单位为 MB。默认值为 10240 MB。
+maxIncomingConnections
+mongos 或 mongod 接受的最大同时连接数量。
+profilingMode
+是否启用性能分析（Profiling）模式，即是否开启慢查询检测。
+默认值为 off，表示不收集任何慢查询。
+slowOp：表示根据 slowOpThresholdMs 参数收集慢查询数据。
+all：表示开启全局慢查询检测，即收集任何操作记录的数据。
+slowOpThresholdMs
+慢操作时间阈值。花费时间大于此参数值的操作将被视为慢操作。
+enableMajorityReadConcern
+是否使用安全读取策略。默认为 true，表示只能读取到成功写入到大多数节点的数据。
+修改此参数值将导致数据库服务重启。
+systemLog.component.command.verbosity
+命令相关组件的日志记录级别。
+默认值为 0，记录 Informational 级别日志。
+设置为 1，会记录所有的请求日志。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/04-radondb-opensearch/06-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/06-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB OpenSearch 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点角色并设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/07-radondb-mongodb/06-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/06-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB MongoDB 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MongoDB 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在 MongoDB 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/04-radondb-opensearch/07-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/07-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB OpenSearch 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择节点角色，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/07-radondb-mongodb/07-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/07-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB MongoDB 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MongoDB 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在 MongoDB 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>修改配置参数</title>
+      <link>/v2.0/11-radondb-rabbitmq/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB RabbitMQ 的配置参数。
+RadonDB RabbitMQ 实例支持编辑配置参数，通过管理配置参数可调优服务性能，并可启用高可用性能。
+警告 修改部分配置参数后，RabbitMQ 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 节点端口
+是否启用 NodePort 以便从集群外部访问。
+cluster_partition_handling
+网络分区处理策略。
+cluster_keepalive_interval
+向集群里的其他子节点发送存活消息的间隔，单位为 ms。取值范围为 1000–51200。
+queue_master_locator
+队列主节点的策略。
+peer_discovery_backend
+指定集群节点发现机制。
+address_type
+访问其他节点时使用的方式。
+hostname
+Kubernetes API 主机名。
+num_acceptors.tcp
+接收 tcp 连接的 erlang 进程数。
+handshake_timeout
+连接超时时间，单位 ms。
+num_acceptors.ssl
+接收 tls 连接的 erlang 进程数。
+vm_memory_high_watermark.relative
+内存阈值, 绝对值。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/02-radondb-mysql/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB MySQL 数据库的配置参数。
+RadonDB MySQL 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，MySQL 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 日志参数 参数 说明 Audit_log_policy
+审计日志插件将事件写入其日志文件时采用的策略。
+Audit_log_format
+审计日志文件格式。
+Audit_log_rotate_on_size
+单个审计日志文件的大小。默认值 104857600。
+如果参数值不是 4096 的整数倍，参数值将被下调为 4096 的整数倍。
+Audit_log_rotations
+审计日志文件的最大数量。默认值 6，表示最多保留 6 个文件。
+Expire_logs_days
+二进制日志文件的保留期限，单位为天。
+默认值 7，表示日志最长保留 7 天。
+性能参数 参数 说明 Innodb_buffer_pool_size
+缓冲池大小。最多可以分配 80% 的内存。
+若该值为 -1，该参数设置为内存的 60%。
+Character_set_server
+数据库服务器的默认字符集。
+默认值 utf8mb4。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/05-radondb-redis-cluster/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB Redis Cluster 数据库的配置参数。
+RadonDB Redis Cluster 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，Redis Cluster 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 外部访问
+是否使用域名从 KubeSphere 集群外部访问数据库分片。
+maxmemory
+Redis 可用内存的上限，单位为 MB。默认值为 974。
+activerehashing
+是否启用重哈希以节省内存。默认值为 yes。
+appendonly
+是否启用 AOF 持久性。默认值为 yes。
+appendfsync
+AOF 同步策略。默认值为 everysec。
+cluster-node-timeout
+Redis 集群节点不可用时间上限，单位为毫秒。超过上限后，Redis 集群节点将被视为故障。取值范围为 1000~6000000。默认值为 15000。
+latency-monitor-threshold
+慢操作时间阈值，单位为毫秒。花费时间超过此参数值的操作将被写入日志。取值 0 表示禁用此功能。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/06-radondb-redis-sentinel/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB Redis Sentinel 数据库的配置参数。
+RadonDB Redis Sentinel 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，Redis Sentinel 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 外部访问
+是否使用域名从 KubeSphere 集群外部访问数据库分片。
+maxmemory
+Redis 可用内存的上限，单位为 MB。默认值为 974。
+activerehashing
+是否启用重哈希以节省内存。默认值为 yes。
+appendonly
+是否启用 AOF 持久性。默认值为 yes。
+appendfsync
+AOF 同步策略。默认值为 everysec。
+cluster-node-timeout
+Redis 集群节点不可用时间上限，单位为毫秒。超过上限后，Redis 集群节点将被视为故障。取值范围为 1000~6000000。默认值为 15000。
+latency-monitor-threshold
+慢操作时间阈值，单位为毫秒。花费时间超过此参数值的操作将被写入日志。取值 0 表示禁用此功能。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/08-radondb-postgresql/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB PostgreSQL 数据库的配置参数。
+RadonDB PostgreSQL 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，PostgreSQL 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 参数 说明 内核
+数据库内核版本。创建成功后，不支持修改。
+port
+PostgreSQL 服务器监听的端口号。取值范围为 1~65534，参数值不能为 55555。
+fsync
+是否设置 PostgreSQL 服务器尽可能确保更新被物理写入磁盘。默认值为 true。
+full_page_writes
+是否设置 PostgreSQL 服务器在每个检查点后第一次修改时将每个磁盘页面的全部内容写入 WAL。
+wal_compression
+表示流式复制并发连接的最大数量是否设置 PostgreSQL 服务器在基础备份过程中或在 full_page_writes 启用时压缩写入到 WAL 的完整页面。
+jit
+JIT 编译可用时，是否允许 PostgreSQL 使用 JIT 编译。
+autovacuum
+服务器是否运行自动清理启动器守护进程。
+synchronous_commit
+数据库服务器向客户端返回 success 指示之前所需要完成的 WAL 处理工作量。</description>
+    </item>
+    
+    <item>
+      <title>扩展 RabbitMQ 节点</title>
+      <link>/v2.0/11-radondb-rabbitmq/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB RabbitMQ 的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断 RabbitMQ 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/04-radondb-opensearch/08-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/08-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB OpenSearch 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 OpenSearch 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，选择节点角色，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/07-radondb-mongodb/08-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/08-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB MongoDB 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在 MongoDB 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/02-radondb-mysql/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB MySQL 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/05-radondb-redis-cluster/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB Redis Cluster 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点角色，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/06-radondb-redis-sentinel/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB Redis Sentinel 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/08-radondb-postgresql/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB PostgreSQL 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>修改配置参数</title>
+      <link>/v2.0/10-radondb-kafka/08-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/08-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB Kafka 的配置参数。
+RadonDB Kafka 实例支持编辑配置参数，通过管理配置参数可调优服务性能，并可启用高可用性能。
+警告 修改部分配置参数后，Kafka 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，在左上角的下拉框中切换 Kafka 和 ZooKeeper，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 Kafka 参数 参数 说明 num.partitions
+主题分区默认值。默认值为 3。
+TLS
+是否启用 TLS 加密。默认值为 true。
+认证类型
+Kafka 的认证类型。默认采用 TLS。
+节点端口
+是否启用 KubeSphere 节点端口用于从集群外部访问。默认值为 true。
+log.retention.bytes
+分区大小上限，单位为字节。分区大小超过上限将触发删除策略。默认值为 -1。
+log.retention.hours
+日志文件的最大保留时间。超过最大保留时间的日志文件将被删除。默认值为 168。
+log.segment.bytes
+段文件的大小上限，单位为字节。默认值为 1073741824。
+log.segment.delete.delay.ms
+删除段文件之前等待的时间。默认值为 60000。
+log.roll.hours
+段文件轮滚前的最大时间，单位为小时。默认值为 168。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/02-radondb-mysql/09-adjust-cpu-and-memory-resources-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/09-adjust-cpu-and-memory-resources-copy/</guid>
+      <description>本节介绍如何调整 RadonDB MySQL 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/05-radondb-redis-cluster/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB Redis Cluster 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择节点角色，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/06-radondb-redis-sentinel/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB Redis Sentinel 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/08-radondb-postgresql/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB PostgreSQL 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/11-radondb-rabbitmq/09-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/09-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB RabbitMQ 节点的 CPU 和内存资源。
+警告 此操作可能会中断 RabbitMQ 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展 Kafka 节点</title>
+      <link>/v2.0/10-radondb-kafka/09-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/09-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB Kafka 的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+此操作可能会中断 Kafka 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，选择节点角色和数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>删除 MongoDB 实例</title>
+      <link>/v2.0/07-radondb-mongodb/09-delete-radondb-mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/07-radondb-mongodb/09-delete-radondb-mongodb/</guid>
+      <description>本节介绍如何删除 RadonDB MongoDB 实例。
+警告 此操作将删除 RadonDB MongoDB 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB MongoDB 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+在 RadonDB MongoDB 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB MongoDB 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MongoDB。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除 OpenSearch 实例</title>
+      <link>/v2.0/04-radondb-opensearch/09-delete-radondb-opensearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/09-delete-radondb-opensearch/</guid>
+      <description>本节介绍如何删除 RadonDB OpenSearch 实例。
+警告 此操作将删除 RadonDB OpenSearch 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB OpenSearch 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+在 RadonDB OpenSearch 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB OpenSearch 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 OpenSearch。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/02-radondb-mysql/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/05-radondb-redis-cluster/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Cluster 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 Redis Cluster 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，选择节点角色，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/06-radondb-redis-sentinel/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Redis Sentinel 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 Redis Sentinel 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，选择节点角色，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/08-radondb-postgresql/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB PostgreSQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 PostgreSQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/11-radondb-rabbitmq/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到 RadonDB RabbitMQ 节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB RabbitMQ 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RabbitMQ 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>重平衡 Kafka 节点</title>
+      <link>/v2.0/10-radondb-kafka/10-rebalance-nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/10-rebalance-nodes/</guid>
+      <description>本节介绍如何重平衡 RadonDB Kafka 节点。
+重平衡（rebalance）规定了一个消费组的消费者如何分配订阅主题的分区，同一个消费组不能有多个消费者同时消费同一个分区。
+警告 此操作可能会中断 Kafka 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 重平衡节点。
+在重平衡节点对话框，点击开始重平衡。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/10-radondb-kafka/11-adjust-cpu-and-memory-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/11-adjust-cpu-and-memory-resources/</guid>
+      <description>本节介绍如何调整 RadonDB Kafka 节点的 CPU 和内存资源。
+警告 此操作可能会中断 Kafka 服务，请在非高峰时段执行此操作。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择节点角色，设置分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 MySQL 实例</title>
+      <link>/v2.0/02-radondb-mysql/11-delete-radondb-mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/11-delete-radondb-mysql/</guid>
+      <description>本节介绍如何删除 RadonDB MySQL 实例。
+警告 此操作将删除 RadonDB MySQL 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB MySQL 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 RadonDB MySQL 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB MySQL 实例的名称，然后点击确定。
+勾选同时删除备份信息，将同时清除数据库备份。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除 PostgreSQL 实例</title>
+      <link>/v2.0/08-radondb-postgresql/11-delete-radondb-postgresql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/11-delete-radondb-postgresql/</guid>
+      <description>本节介绍如何删除 RadonDB PostgreSQL 实例。
+警告 此操作将删除 RadonDB PostgreSQL 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB PostgreSQL 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+在 RadonDB PostgreSQL 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB PostgreSQL 实例的名称，然后点击确定。
+勾选同时删除备份信息，将同时清除数据库备份。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 PostgreSQL。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除 RabbitMQ 实例</title>
+      <link>/v2.0/11-radondb-rabbitmq/11-delete-radondb-rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/11-radondb-rabbitmq/11-delete-radondb-rabbitmq/</guid>
+      <description>本节介绍如何删除 RadonDB RabbitMQ 实例。
+警告 此操作将删除 RadonDB RabbitMQ 实例中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB RabbitMQ 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+在 RadonDB RabbitMQ 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB RabbitMQ 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 RabbitMQ。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除 Redis Cluster 实例</title>
+      <link>/v2.0/05-radondb-redis-cluster/11-delete-radondb-redis-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/05-radondb-redis-cluster/11-delete-radondb-redis-cluster/</guid>
+      <description>本节介绍如何删除 RadonDB Redis Cluster 实例。
+警告 此操作将删除 RadonDB Redis Cluster 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB Redis Cluster 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+在 RadonDB Redis Cluster 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB Redis Cluster 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Cluster。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>删除 Redis Sentinel 实例</title>
+      <link>/v2.0/06-radondb-redis-sentinel/11-delete-radondb-redis-sentinel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/06-radondb-redis-sentinel/11-delete-radondb-redis-sentinel/</guid>
+      <description>本节介绍如何删除 RadonDB Redis Sentinel 实例。
+警告 此操作将删除 RadonDB Redis Sentinel 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB Redis Sentinel 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+在 RadonDB Redis Sentinel 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB Redis Sentinel 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Redis Sentinel。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>对接 Logstash 和 Kafka</title>
+      <link>/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/</guid>
+      <description>Logstash 是一个开源数据收集引擎，支持从多个数据源采集数据、转换数据、并将数据写入到指定存储中。本节介绍如何对接 Logstash 和 Kafka。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台管理权限。
+已经创建好 Kafka 和 OpenSearch 集群，且集群状态处于运行中。
+Kafka 集群操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 集群列表中，点击一个集群名称打开其详情页面。
+在页面右侧点击主题。
+在创建主题对话框，输入主题名称，并设置分区数量和副本数量，点击确定。
+点击 Kafka 用户，然后点击创建。
+在创建用户对话框，设置用户名为 logstash，然后点击确定。用户创建完成后将显示在用户列表中。
+在页面左侧的传输加密区域，下载 CA 证书并保存密码。
+在页面右侧点击 Kafka 用户页签，下载用户证书并保存密码。
+上传证书到服务器，根据 keystore 和 truststore 创建 secret 或 configmap。
+# 创建 secret kubectl -n p1 create secret generic test-kafka-ssl --from-file ./cluster.keystore.p12 --from-file ./cluster.truststore.p12 # 创建 configmap kubectl -n p1 create cm test-cm-kafka --from-file=/tmp/cluster.</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/10-radondb-kafka/12-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/12-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到 RadonDB Kafka 节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储（存储类为 local）创建的卷进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+扩容卷可能会造成业务短暂的中断，请在业务低峰时进行。
+前提条件 RadonDB Kafka 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，修改卷容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>迁移 PostgreSQL 数据</title>
+      <link>/v2.0/08-radondb-postgresql/12-migrate-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/08-radondb-postgresql/12-migrate-data/</guid>
+      <description>本节介绍如何导出 PostgreSQL 源数据库集群内的数据，并导入至目标数据库集群。
+警告 数据迁移过程中，请暂停源数据库的写操作。
+为避免数据丢失，建议在业务低峰期迁移数据。
+小型 PostgreSQL 集群数据迁移 小型 PostgreSQL 集群可通过 pg_dump 离线导出数据，再通过 PostgreSQL 支持的方式导入数据，实现 PostgreSQL 的数据迁移。
+前提条件 已获取管理控制台登录账号和密码，且已获取集群操作权限。
+PostgreSQL 集群状态为活跃。
+已获取目标 PostgreSQL 数据库信息。
+步骤一：创建用户 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在 PostgreSQL 数据库集群的数据库用户页签，创建数据库用户。该用户的用户名、密码及账户权限必须与源数据库集群中的相同。
+备注 由于数据库具备完整的权限控制，在导出或导入数据时会根据用户权限进行区分。
+高级权限用户：能够导入导出整个数据库的数据。
+普通权限用户：仅能导入导出当前账户权限范围内的数据。
+在后续操作中，默认使用高级权限账户进行示例。如果使用普通权限账户，请注意关注相应的权限范围。
+步骤二：导出数据 若源集群与目标集群网络互通
+在源集群环境下，执行如下命令，将指定数据库内的数据直接导出至目标集群。
+PGPASSWORD=&amp;lt;用户密码&amp;gt; pg_dump -U &amp;lt;源端超级用户&amp;gt; -d &amp;lt;源端要备份的库&amp;gt; -C -h &amp;lt;源端库的 IP&amp;gt; | psql -U &amp;lt;目的端超级用户&amp;gt; -d postgres -h &amp;lt;目的端 IP&amp;gt; 示例：
+PGPASSWORD=Jxxxx1234@ pg_dump -U user_1 -d runoobdb -C -h 192.</description>
+    </item>
+    
+    <item>
+      <title>删除 Kafka 实例</title>
+      <link>/v2.0/10-radondb-kafka/13-delete-radondb-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/10-radondb-kafka/13-delete-radondb-kafka/</guid>
+      <description>本节介绍如何删除 RadonDB Kafka 实例。
+警告 此操作将删除 RadonDB Kafka 实例中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB Kafka 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+在 RadonDB Kafka 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB Kafka 实例的名称，然后点击确定。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 Kafka。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>搜索功能</title>
+      <link>/v2.0/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

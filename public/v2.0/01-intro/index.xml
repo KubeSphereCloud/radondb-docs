@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>产品简介 on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/01-intro/</link>
+    <description>Recent content in 产品简介 on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/01-intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>产品概述</title>
+      <link>/v2.0/01-intro/01-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/01-intro/01-overview/</guid>
+      <description>RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。
+RadonDB DMP 提供一站式、可视化的云原生数据库全生命周期管理。支持一键部署数据库，统一管理所有数据库实例，快速定位潜在风险和故障，并即时监测全局指标状态，提高数据库管理效率。
+备注 在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件，需要在扩展市场（KubeSphere Marketplace）订阅安装后才能使用。
+有关更多信息，请参阅 KubeSphere 企业版使用文档的扩展组件管理章节。</description>
+    </item>
+    
+    <item>
+      <title>进入数据库管理平台</title>
+      <link>/v2.0/01-intro/02-access-dmp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/01-intro/02-access-dmp/</guid>
+      <description>本节介绍如何从 KubeSphere 企业版 v4.0 Web 控制台进入 RadonDB DMP 数据库管理平台，并查看其概览信息。
+前提条件 以 platform-admin 角色登录到 KubeSphere 企业版 Web 控制台。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的用户和角色管理章节。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的扩展组件管理章节。
+操作步骤 打开 Web 浏览器，在地址栏中输入 KubeSphere 企业版 Web 控制台的 IP 地址和端口号。
+在 KubeSphere 企业版登录页面，输入用户信息然后点击登录。
+点击顶部导航栏上的图标，点击 RadonDB DMP，进入数据库管理平台。
+在概览页面，查看 RadonDB DMP 提供的数据库服务、中间件服务、备份管理、告警状态等的概览信息。
+备注 对于多集群环境，在概览上方的下拉菜单中切换集群，为不同集群管理数据库实例。
+下拉菜单中显示的集群为您配置集群 Agent 时选择的集群。</description>
+    </item>
+    
+  </channel>
+</rss>

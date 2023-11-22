@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on RadonDB DMP 数据库管理平台</title>
+    <link>/v2.0/02-radondb-mysql/</link>
+    <description>Recent content in MySQL on RadonDB DMP 数据库管理平台</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/02-radondb-mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建 MySQL 实例</title>
+      <link>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</guid>
+      <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MySQL 实例。
+前提条件 在 KubeSphere 企业版平台加入一个项目。
+KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在页面右侧选择新建 MySQL 实例。
+在基本信息页签，设置 RadonDB MySQL 实例的基本信息和位置，然后点击下一步。
+参数 描述 名称
+MySQL 实例的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+描述
+MySQL 实例的描述信息。描述可包含任意字符，最长 256 个字符。
+位置
+MySQL 实例所属的企业空间和项目。
+在应用设置页签，设置 MySQL 实例的参数。
+参数 描述 版本
+MySQL 应用的版本。
+内核版本
+MySQL 数据库的内核版本。
+资源
+为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
+存储类
+MySQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
+卷
+每个节点使用的卷大小，单位为 GiB。
+备数据库
+用于确保高可用性的备数据库的数量，取值可以为 1、2 或 4。</description>
+    </item>
+    
+    <item>
+      <title>查看运行状态</title>
+      <link>/v2.0/02-radondb-mysql/02-view-database-running-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/02-view-database-running-status/</guid>
+      <description>本节介绍如何查看 RadonDB MySQL 实例的运行状态。
+前提条件 已创建 RadonDB MySQL 实例。更多信息，请参阅创建 MySQL 实例。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+已创建的 MySQL 实例将显示在 MySQL 实例列表中。
+参数 描述 名称
+MySQL 实例在 KubeSphere 企业版平台的名称。
+状态
+MySQL 实例的运行状态。
+创建中：正在创建。
+更新中：正在更新配置。
+已完成：更新完成，即将开始运行。
+失败：创建过程中出现错误。
+运行中：运行正常。
+企业空间
+MySQL 实例所属的企业空间。
+项目
+MySQL 实例所属的项目。
+内核版本
+MySQL 数据库的内核版本。
+创建时间
+MySQL 实例的创建时间。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在详情⻚⾯左侧的详情区域查看其资源属性。
+参数 描述 集群
+MySQL 实例所属的集群。
+企业空间
+MySQL 实例所属的企业空间。
+项目
+MySQL 实例所属的项目。
+名称</description>
+    </item>
+    
+    <item>
+      <title>访问 MySQL 数据库</title>
+      <link>/v2.0/02-radondb-mysql/04-access-the-database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/04-access-the-database/</guid>
+      <description>本节介绍如何访问 RadonDB MySQL 数据库。
+前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
+RadonDB MySQL 实例状态为运行中。
+已获取 MySQL 数据库用户名和密码。有关更多信息，请参阅创建数据库用户。
+通过 KubeSphere 企业版平台访问 以下演示在 KubeSphere 企业版平台访问 RadonDB MySQL 的方式。
+在 KubeSphere 企业版平台右下角工具箱中选择 kubectl 工具，通过 kubectl 工具访问 RadonDB MySQL。
+连接 RadonDB MySQL 数据库的命令如下：
+kubectl exec -it &amp;lt;pod_name&amp;gt; -c mysql -n &amp;lt;project_name&amp;gt; -- mysql --user=&amp;lt;user_name&amp;gt; --password=&amp;lt;user_password&amp;gt; 参数说明：
+pod_name 为 MySQL 数据库所在的容器组名称
+project_name 为 MySQL 数据库所在的项目名称
+user_name 为 radondb
+user_password 为 RadonDB@123
+通过 mysql-client 访问 备注 使用如下方式，需提前安装可用于连接 MySQL 数据库的客户端工具。</description>
+    </item>
+    
+    <item>
+      <title>修改数据库配置参数</title>
+      <link>/v2.0/02-radondb-mysql/07-manage-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/07-manage-parameters/</guid>
+      <description>本节介绍如何修改 RadonDB MySQL 数据库的配置参数。
+RadonDB MySQL 实例支持编辑配置参数，通过管理配置参数可调优数据库性能，并可启用数据库高可用性能。
+警告 修改部分配置参数后，MySQL 服务会重启，造成业务中断。请谨慎操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+点击页面右侧的参数管理页签，点击编辑即可修改配置参数。
+点击确定保存。
+参数简介 日志参数 参数 说明 Audit_log_policy
+审计日志插件将事件写入其日志文件时采用的策略。
+Audit_log_format
+审计日志文件格式。
+Audit_log_rotate_on_size
+单个审计日志文件的大小。默认值 104857600。
+如果参数值不是 4096 的整数倍，参数值将被下调为 4096 的整数倍。
+Audit_log_rotations
+审计日志文件的最大数量。默认值 6，表示最多保留 6 个文件。
+Expire_logs_days
+二进制日志文件的保留期限，单位为天。
+默认值 7，表示日志最长保留 7 天。
+性能参数 参数 说明 Innodb_buffer_pool_size
+缓冲池大小。最多可以分配 80% 的内存。
+若该值为 -1，该参数设置为内存的 60%。
+Character_set_server
+数据库服务器的默认字符集。
+默认值 utf8mb4。</description>
+    </item>
+    
+    <item>
+      <title>扩展数据库节点</title>
+      <link>/v2.0/02-radondb-mysql/08-scale-out-the-database-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/08-scale-out-the-database-cluster/</guid>
+      <description>本节介绍如何扩展 RadonDB MySQL 数据库的节点。
+警告 若选择节点数低于当前节点数，将删除超出的节点。
+扩展节点可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展。
+在扩展对话框，设置节点的数量，然后点击确定。待实例状态切换为运行中，则新增节点完成。</description>
+    </item>
+    
+    <item>
+      <title>调整 CPU 和内存资源</title>
+      <link>/v2.0/02-radondb-mysql/09-adjust-cpu-and-memory-resources-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/09-adjust-cpu-and-memory-resources-copy/</guid>
+      <description>本节介绍如何调整 RadonDB MySQL 数据库的 CPU 和内存资源。
+警告 此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 调整资源。
+在调整资源对话框，选择分配给每个节点的 CPU 和内存资源数量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>扩展卷</title>
+      <link>/v2.0/02-radondb-mysql/10-expand-the-volume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/10-expand-the-volume/</guid>
+      <description>本节介绍如何扩展挂载到数据库节点的卷。
+备注 目前不支持对使用 KubeSphere 企业版集群本地存储创建的卷（local）进行扩展。
+目前仅支持增加卷容量，不支持减少卷容量。
+此操作可能会中断数据库服务，请在非高峰时段执行此操作。
+前提条件 RadonDB MySQL 实例状态为运行中。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 MySQL 实例列表中，点击一个实例名称打开其详情页面。
+在页面左上角选择更多操作 &amp;gt; 扩展卷。
+在扩展卷对话框，设置卷的容量，然后点击确定。</description>
+    </item>
+    
+    <item>
+      <title>删除 MySQL 实例</title>
+      <link>/v2.0/02-radondb-mysql/11-delete-radondb-mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/02-radondb-mysql/11-delete-radondb-mysql/</guid>
+      <description>本节介绍如何删除 RadonDB MySQL 实例。
+警告 此操作将删除 RadonDB MySQL 数据库和数据库中的所有数据，请谨慎执行此操作。
+前提条件 已创建 RadonDB MySQL 实例。
+为避免数据丢失，请提前备份数据。
+操作步骤 删除单个实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+在 RadonDB MySQL 实例右侧点击，然后在下拉列表中选择删除。
+在删除对话框，输入 RadonDB MySQL 实例的名称，然后点击确定。
+勾选同时删除备份信息，将同时清除数据库备份。
+批量删除实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏选择 MySQL。
+选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
+在确认删除对话框中，输入要删除的实例名称，点击确定。
+备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+  </channel>
+</rss>
