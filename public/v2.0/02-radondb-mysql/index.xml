@@ -14,8 +14,8 @@
       
       <guid>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MySQL 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 MySQL。
 在页面右侧选择新建 MySQL 实例。
@@ -29,16 +29,14 @@ MySQL 实例所属的企业空间和项目。
 在应用设置页签，设置 MySQL 实例的参数。
 参数 描述 版本
 MySQL 应用的版本。
-内核版本
+数据库内核
 MySQL 数据库的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 MySQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-备数据库
-用于确保高可用性的备数据库的数量，取值可以为 1、2 或 4。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -65,7 +63,7 @@ MySQL 实例的运行状态。
 MySQL 实例所属的企业空间。
 项目
 MySQL 实例所属的项目。
-内核版本
+数据库内核
 MySQL 数据库的内核版本。
 创建时间
 MySQL 实例的创建时间。
@@ -89,7 +87,7 @@ MySQL 实例所属的项目。
       <description>本节介绍如何访问 RadonDB MySQL 数据库。
 前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
 RadonDB MySQL 实例状态为运行中。
-已获取 MySQL 数据库用户名和密码。有关更多信息，请参阅创建数据库用户。
+已获取 MySQL 数据库用户名和密码。更多相关信息，请参阅创建数据库用户。
 通过 KubeSphere 企业版平台访问 以下演示在 KubeSphere 企业版平台访问 RadonDB MySQL 的方式。
 在 KubeSphere 企业版平台右下角工具箱中选择 kubectl 工具，通过 kubectl 工具访问 RadonDB MySQL。
 连接 RadonDB MySQL 数据库的命令如下：

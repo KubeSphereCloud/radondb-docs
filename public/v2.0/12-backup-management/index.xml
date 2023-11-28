@@ -7,38 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>©2022 QingCloud, Inc. All rights reserved</copyright><atom:link href="/v2.0/12-backup-management/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>创建备份仓库</title>
-      <link>/v2.0/12-backup-management/01-create-a-backup-repository/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/v2.0/12-backup-management/01-create-a-backup-repository/</guid>
-      <description>本节介绍如何创建 RadonDB 数据库的备份仓库，以存储在各数据库详情页的“备份管理”页签创建的备份。
-目前支持 S3 存储及本地存储两种存储类型。
-前提条件 准备好 S3 备份仓库所在的区域名称、S3 访问地址、访问密钥和访问密钥口令。
-操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
-在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
-在页面右侧选择创建。
-参数 描述 数据库类型
-一种数据库类型只能创建一个备份仓库。一个备份仓库只能为一种数据库提供备份存储。
-为备份仓库指定一个数据库类型，以存储该类数据库的备份数据。
-备份仓库名称
-最长 63 个字符，只能包含小写字母、数字及分隔符(&amp;#39;-&amp;#39;)，且必须以小写字母或数字开头及结尾。
-bucket
-S3 备份仓库所在的区域（region）名称。
-访问地址
-S3 备份仓库的访问地址。
-访问密钥
-S3 备份仓库的访问密钥。
-加密密钥
-S3 备份仓库的访问密钥口令。
-描述
-对该备份仓库的描述信息。可包含任意字符，最长 256 个字符。
-点击确定。创建的备份仓库将显示在备份仓库管理页面的仓库列表中。
-在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的备份仓库。
-在列表右上角点击可刷新列表信息。
-在列表右上角点击可定制列表中显示的信息。</description>
-    </item>
-    
   </channel>
 </rss>

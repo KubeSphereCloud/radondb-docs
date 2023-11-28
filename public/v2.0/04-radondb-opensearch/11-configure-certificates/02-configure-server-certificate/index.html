@@ -137,7 +137,7 @@
       <div class="sidebar-title" >
         <a href="/v2.0/">
           
-            DMP 数据库管理平台
+            RadonDB DMP
         </a>
         
       </div>
@@ -2609,10 +2609,99 @@
       
       
       
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/01-repository-management/">管理备份仓库</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
           
           <li class="sidebar-item  ">
-            <a href="/v2.0/12-backup-management/01-create-a-backup-repository/">创建备份仓库</a>
+            <a href="/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/">创建备份仓库</a>
           </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/">查看备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/">编辑备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/">删除备份仓库</a>
+          </li>
+        
+      
+    
+  
+</ul>
         
       
     
@@ -2706,6 +2795,51 @@
     
   
     
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/15-release-notes/">版本说明</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/15-release-notes/01-v2.0.0/">v2.0.0 版本说明</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
   
 </ul>
       
@@ -2724,7 +2858,7 @@
     配置 OpenSearch 集群服务端证书</h1>
   <div class="post-info">
     <div class="post-date">
-      更新时间：2023-11-22 02:07:08
+      更新时间：2023-11-28 05:41:51
     </div>
     
     
@@ -2746,6 +2880,7 @@
   <div class="post-menu-title">本页目录</div>
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#_配置_opensearch">配置 OpenSearch</a></li>
     <li><a href="#_opensearch_集群内部自动生成证书">OpenSearch 集群内部自动生成证书</a></li>
     <li><a href="#_用户自定义证书">用户自定义证书</a></li>
   </ul>
@@ -2803,6 +2938,43 @@
 </div>
 </li>
 </ul>
+</div>
+<div class="sect1">
+<h2 id="_配置_opensearch">配置 OpenSearch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>设置 OpenSearch CR:.spec.confMgmt.updateConfigOnly 的值为 true。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  confMgmt:
+    forceRestart: true
+    smartScaler: true
+    updateConfigOnly: true</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch admon note">
+<colgroup>
+<col style="width: 100%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>请务必把该值设为 true。否则，后续操作将还原所有 OpenSearch 集群的用户、角色、密码等设置。</p>
+</div>
+<div class="paragraph">
+<p>修改该配置不会触发 pod 重建。</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_opensearch_集群内部自动生成证书">OpenSearch 集群内部自动生成证书</h2>
@@ -3624,6 +3796,7 @@ status:
   <div class="post-menu-title">本页目录</div>
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#_配置_opensearch">配置 OpenSearch</a></li>
     <li><a href="#_opensearch_集群内部自动生成证书">OpenSearch 集群内部自动生成证书</a></li>
     <li><a href="#_用户自定义证书">用户自定义证书</a></li>
   </ul>

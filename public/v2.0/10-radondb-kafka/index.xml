@@ -14,8 +14,8 @@
       
       <guid>/v2.0/10-radondb-kafka/01-quickstart/</guid>
       <description>本节介绍如何快速创建 RadonDB Kafka 实例并访问 Kafka。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 创建 Kafka 实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Kafka。
 在页面右侧选择新建 Kafka 实例。
@@ -28,9 +28,7 @@ KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件�
 在页面右侧点击主题页签，然后点击创建。
 在创建主题对话框，输入主题名称，如 demo-topic, 并设置分区数量和副本数量，点击确定。
 创建 Kafka 用户 在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
-在页面右侧点击 Kafka 用户页签，然后点击创建。
-在创建用户对话框，设置用户名，如 demo-user1，并配置以下两条规则：
-规则 1: 允许“主题”名称为 demo-topic 的所有操作权限。</description>
+在页面右侧点击 Kafka 用户页签，然后点击创建。</description>
     </item>
     
     <item>
@@ -40,8 +38,8 @@ KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件�
       
       <guid>/v2.0/10-radondb-kafka/02-install-radondb-kafka/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Kafka 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Kafka。
 在页面右侧选择新建 Kafka 实例。
@@ -55,15 +53,13 @@ Kafka 实例所属的企业空间和项目。
 在应用设置页签，设置 Kafka 实例的参数。
 参数 描述 版本
 Kafka 应用的版本。
-内核版本
+数据库内核
 Kafka 的内核版本。
 资源
 分配给每个 Kafka/ZooKeeper 节点的 CPU 和内存资源。
 Kafka/ZooKeeper 节点数量
 Kafka/ZooKeeper 节点的数量。
-存储类
-Kafka/ZooKeeper 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
-卷</description>
+存储类</description>
     </item>
     
     <item>
@@ -90,7 +86,7 @@ Kafka 实例的运行状态。
 Kafka 实例所属的企业空间。
 项目
 Kafka 实例所属的项目。
-内核版本
+数据库内核
 Kafka 的内核版本。
 创建时间
 Kafka 实例的创建时间。

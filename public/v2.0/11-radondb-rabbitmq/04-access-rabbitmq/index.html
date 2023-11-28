@@ -137,7 +137,7 @@
       <div class="sidebar-title" >
         <a href="/v2.0/">
           
-            DMP 数据库管理平台
+            RadonDB DMP
         </a>
         
       </div>
@@ -2609,10 +2609,99 @@
       
       
       
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/01-repository-management/">管理备份仓库</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
           
           <li class="sidebar-item  ">
-            <a href="/v2.0/12-backup-management/01-create-a-backup-repository/">创建备份仓库</a>
+            <a href="/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/">创建备份仓库</a>
           </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/">查看备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/">编辑备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/">删除备份仓库</a>
+          </li>
+        
+      
+    
+  
+</ul>
         
       
     
@@ -2706,6 +2795,51 @@
     
   
     
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/15-release-notes/">版本说明</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/15-release-notes/01-v2.0.0/">v2.0.0 版本说明</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
   
 </ul>
       
@@ -2723,7 +2857,7 @@
     访问 RabbitMQ</h1>
   <div class="post-info">
     <div class="post-date">
-      更新时间：2023-11-22 02:07:08
+      更新时间：2023-11-28 05:41:51
     </div>
     
     
@@ -2861,7 +2995,7 @@
 <p>&lt;instance_address&gt;：RabbitMQ 实例的连接地址，如上图所示的 172.31.73.234。在实例详情页面的左侧区域查看对应的 IP 地址，并替换为实际地址。</p>
 </li>
 <li>
-<p>&lt;NodePort&gt;：RabbitMQ 实例的端口号，如上图所示的 32694。请替换为实际端口号。</p>
+<p>&lt;NodePort&gt;：RabbitMQ 实例的端口号，请替换为实际端口号。可执行 kubectl get svc -n &lt;namespace&gt; 获取该实例对应的 NodePort。</p>
 </li>
 <li>
 <p>&lt;user&gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户名。</p>
@@ -2870,14 +3004,6 @@
 <p>&lt;password&gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户的密码。</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>示例命令如下：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">rabbitmqadmin --host=172.31.73.234 --port=32694 --username=guest --password=guest</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -2941,7 +3067,7 @@
 <p>&lt;instance_address&gt;：RabbitMQ 实例的连接地址，如上图所示的 172.31.73.234。在实例详情页面的左侧区域查看对应的 IP 地址，并替换为实际地址。</p>
 </li>
 <li>
-<p>&lt;NodePort&gt;：RabbitMQ 实例的端口号，如上图所示的 32694。请替换为实际端口号。</p>
+<p>&lt;NodePort&gt;：RabbitMQ 实例的端口号，请替换为实际端口号。可执行 kubectl get svc -n &lt;namespace&gt; 获取该实例对应的 NodePort。</p>
 </li>
 <li>
 <p>&lt;user&gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户名。</p>

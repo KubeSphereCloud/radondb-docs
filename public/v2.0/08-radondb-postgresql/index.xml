@@ -14,8 +14,8 @@
       
       <guid>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB PostgreSQL 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 PostgreSQL。
 在页面右侧选择新建 PostgreSQL 实例。
@@ -29,16 +29,14 @@ PostgreSQL 实例所属的企业空间和项目。
 在应用设置页签，设置 PostgreSQL 实例的参数。
 参数 描述 版本
 PostgreSQL 应用的版本。
-内核版本
+数据库内核
 PostgreSQL 数据库的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 PostgreSQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-数据节点数量
-PostgreSQL 实例的数据节点数量。取值范围为 2 到 8。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -65,7 +63,7 @@ PostgreSQL 实例的运行状态。
 PostgreSQL 实例所属的企业空间。
 项目
 PostgreSQL 实例所属的项目。
-内核版本
+数据库内核
 PostgreSQL 数据库的内核版本。
 创建时间
 PostgreSQL 实例的创建时间。

@@ -36,14 +36,14 @@ OpenSearch 集群内部自动生成证书(默认)，具有以下特点：
 自定义有效期。
 暂不支持证书更换或续签。
 该证书可用于从 Kubernetes 集群外部访问 OpenSearch 集群。
+配置 OpenSearch 设置 OpenSearch CR:.spec.confMgmt.updateConfigOnly 的值为 true。
+spec: confMgmt: forceRestart: true smartScaler: true updateConfigOnly: true 备注 请务必把该值设为 true。否则，后续操作将还原所有 OpenSearch 集群的用户、角色、密码等设置。
+修改该配置不会触发 pod 重建。
 OpenSearch 集群内部自动生成证书 在 OpenSearch Dashboards 上开启 TLS 认证。
 将 spec.dashboards.tls.enable 的值设置为 true。
 将 spec.dashboards.tls.generate 的值设置为 true。
 在 OpenSearch 集群上开启 TLS 认证。
-将 spec.security.tls.transport.generate 的值设置为 true。
-将 spec.security.tls.http.generate 的值设置为 true。
-配置文件如下所示：
-apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 dashboards: version: 2.</description>
+将 spec.security.tls.transport.generate 的值设置为 true。</description>
     </item>
     
   </channel>
