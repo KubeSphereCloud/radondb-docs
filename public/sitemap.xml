@@ -3,37 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/v2.0/01-intro/01-overview/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/01-intro/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/10-radondb-kafka/04-manage-database-users/01-create-a-database-user/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/07-radondb-mongodb/01-install-radondb-mongodb/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/05-radondb-redis-cluster/01-install-radondb-redis-cluster/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/06-radondb-redis-sentinel/01-install-radondb-redis-sentinel/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
-    <loc>/v2.0/12-backup-management/01-create-a-backup-repository/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <loc>/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -50,14 +50,17 @@
     <loc>/v2.0/10-radondb-kafka/07-manage-topics/01-create-topics/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
+    <loc>/v2.0/12-backup-management/01-repository-management/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
+  </url><url>
     <loc>/v2.0/02-radondb-mysql/06-manage-database-backup/01-enable-database-auto-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/08-radondb-postgresql/06-manage-database-backup/01-enable-database-auto-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/10-radondb-kafka/01-quickstart/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/04-radondb-opensearch/11-configure-certificates/01-configure-client-certificate/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -83,50 +86,56 @@
     <loc>/v2.0/10-radondb-kafka/07-manage-topics/02-edit-topics/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
+    <loc>/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
+  </url><url>
     <loc>/v2.0/12-backup-management/02-backup-data-management/01-view-backup-list/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/04-radondb-opensearch/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/05-radondb-redis-cluster/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/06-radondb-redis-sentinel/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/07-radondb-mongodb/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/08-radondb-postgresql/02-view-database-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/11-radondb-rabbitmq/02-view-rabbitmq-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/10-radondb-kafka/02-install-radondb-kafka/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/06-manage-database-backup/02-create-database-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/08-radondb-postgresql/06-manage-database-backup/02-create-database-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/12-backup-management/02-backup-data-management/02-restore-from-a-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/12-backup-management/02-backup-data-management/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/01-intro/02-access-dmp/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/04-radondb-opensearch/11-configure-certificates/02-configure-server-certificate/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
+  </url><url>
+    <loc>/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/06-manage-database-backup/03-view-database-backup/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -135,7 +144,7 @@
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/10-radondb-kafka/03-view-kafka-running-status/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/07-radondb-mongodb/03-access-the-database/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -159,7 +168,7 @@
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/12-backup-management/02-backup-data-management/03-delete-a-backup/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/03-manage-database-users/03-delete-database-users/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -186,16 +195,19 @@
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/04-access-the-database/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/08-radondb-postgresql/04-access-the-database/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/11-radondb-rabbitmq/04-access-rabbitmq/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/10-radondb-kafka/04-manage-database-users/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+  </url><url>
+    <loc>/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/05-radondb-redis-cluster/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -318,7 +330,10 @@
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
+  </url><url>
+    <loc>/v2.0/15-release-notes/01-v2.0.0/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/02-radondb-mysql/10-expand-the-volume/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -363,7 +378,7 @@
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
     <loc>/v2.0/12-backup-management/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/v2.0/04-radondb-opensearch/12-connect-logstash-to-kafka/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
@@ -377,10 +392,13 @@
     <loc>/v2.0/10-radondb-kafka/13-delete-radondb-kafka/</loc>
     <lastmod>2023-11-22T10:07:08+08:00</lastmod>
   </url><url>
+    <loc>/v2.0/15-release-notes/</loc>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
+  </url><url>
     <loc>/categories/</loc>
   </url><url>
     <loc>/</loc>
-    <lastmod>2023-11-22T10:07:08+08:00</lastmod>
+    <lastmod>2023-11-28T13:41:51+08:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
   </url><url>

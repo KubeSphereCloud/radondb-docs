@@ -15,8 +15,34 @@
       <guid>/v2.0/01-intro/01-overview/</guid>
       <description>RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。
 RadonDB DMP 提供一站式、可视化的云原生数据库全生命周期管理。支持一键部署数据库，统一管理所有数据库实例，快速定位潜在风险和故障，并即时监测全局指标状态，提高数据库管理效率。
-备注 在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件，需要在扩展市场（KubeSphere Marketplace）订阅安装后才能使用。
-有关更多信息，请参阅 KubeSphere 企业版使用文档的扩展组件管理章节。</description>
+启用 RadonDB DMP 在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件。
+使用 RadonDB DMP，您需要：
+安装 KubeSphere 企业版 v4.0 或更高版本。
+在扩展市场 KubeSphere Marketplace 中订阅并安装 RadonDB DMP。
+更多相关信息，请参阅 KubeSphere 企业版使用文档的扩展组件管理章节。
+版本介绍 RadonDB DMP 中各数据库/中间件产品的包版本以及内核版本如下：
+数据库名称 包版本 数据库内核 MySQL
+3.0.0
+5.7
+8.0
+OpenSearch
+2.0.25
+2.8.0
+Redis Cluster
+1.3.1
+7.0.4
+Redis Sentinel
+1.3.1
+7.0.4
+MongoDB
+1.1.10
+5.0.10
+PostgreSQL
+1.2.4
+12.12
+13.8
+14.5
+15.3</description>
     </item>
     
     <item>
@@ -56,8 +82,8 @@ Kafka 上执行操作所需的用户权限。点击添加以添加多个权限�
       
       <guid>/v2.0/07-radondb-mongodb/01-install-radondb-mongodb/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MongoDB 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 MongoDB。
 在页面右侧选择新建 MongoDB 实例。
@@ -71,16 +97,14 @@ MongoDB 实例所属的企业空间和项目。
 在应用设置页签，设置 MongoDB 实例的参数。
 参数 描述 版本
 MongoDB 应用的版本。
-内核版本
+数据库内核
 MongoDB 数据库的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 MongoDB 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-节点数量
-MongoDB 实例的节点数量。参数值可以为 1、3、5、7。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -90,8 +114,8 @@ MongoDB 实例的节点数量。参数值可以为 1、3、5、7。</description
       
       <guid>/v2.0/02-radondb-mysql/01-install-radondb-mysql/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB MySQL 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 MySQL。
 在页面右侧选择新建 MySQL 实例。
@@ -105,16 +129,14 @@ MySQL 实例所属的企业空间和项目。
 在应用设置页签，设置 MySQL 实例的参数。
 参数 描述 版本
 MySQL 应用的版本。
-内核版本
+数据库内核
 MySQL 数据库的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 MySQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-备数据库
-用于确保高可用性的备数据库的数量，取值可以为 1、2 或 4。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -124,8 +146,8 @@ MySQL 数据库使用的存储系统对应的存储类。如果下拉列表中�
       
       <guid>/v2.0/04-radondb-opensearch/01-install-radondb-opensearch/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB OpenSearch 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 OpenSearch。
 在页面右侧选择新建 OpenSearch 实例。
@@ -139,13 +161,12 @@ OpenSearch 实例所属的企业空间和项目。
 在应用设置页签，设置 OpenSearch 实例的参数。
 参数 描述 版本
 OpenSearch 应用的版本。
-内核版本
+数据库内核
 OpenSearch 数据库的内核版本。
 主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点设置
 资源：分配给每个节点的 CPU 和内存资源。
 主节点/热节点/温节点/冷节点/控制面板节点/Logstash 节点数量：OpenSearch 实例各类型节点的数量。主节点的数量默认为 3 且不能修改，其他节点数量可根据需要设置。
-存储类：节点使用的存储系统对应的存储类。默认值为 local。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
-卷：每个节点使用的卷大小，单位为 GiB。每个主节点的卷大小默认为 20 GiB。控制面板节点和 Logstash 节点不能挂载卷。其他节点的卷大小可根据需要设置。</description>
+存储类：节点使用的存储系统对应的存储类。默认值为 local。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。</description>
     </item>
     
     <item>
@@ -155,8 +176,8 @@ OpenSearch 数据库的内核版本。
       
       <guid>/v2.0/08-radondb-postgresql/01-install-radondb-postgresql/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB PostgreSQL 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 PostgreSQL。
 在页面右侧选择新建 PostgreSQL 实例。
@@ -170,16 +191,14 @@ PostgreSQL 实例所属的企业空间和项目。
 在应用设置页签，设置 PostgreSQL 实例的参数。
 参数 描述 版本
 PostgreSQL 应用的版本。
-内核版本
+数据库内核
 PostgreSQL 数据库的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 PostgreSQL 数据库使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-数据节点数量
-PostgreSQL 实例的数据节点数量。取值范围为 2 到 8。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -189,8 +208,8 @@ PostgreSQL 实例的数据节点数量。取值范围为 2 到 8。</description
       
       <guid>/v2.0/11-radondb-rabbitmq/01-install-radondb-rabbitmq/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB RabbitMQ 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 RabbitMQ。
 在页面右侧选择新建 RabbitMQ 实例。
@@ -204,16 +223,14 @@ RabbitMQ 实例所属的企业空间和项目。
 在应用设置页签，设置 RabbitMQ 实例的参数。
 参数 描述 版本
 RabbitMQ 应用的版本。
-内核版本
+数据库内核
 RabbitMQ 的内核版本。
 资源
 为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。
 存储类
 RabbitMQ 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
 卷
-每个节点使用的卷大小，单位为 GiB。
-节点数量
-RabbitMQ 的节点数量。参数值可以为 1、3、5、7。</description>
+每个节点使用的卷大小，单位为 GiB。</description>
     </item>
     
     <item>
@@ -223,8 +240,8 @@ RabbitMQ 的节点数量。参数值可以为 1、3、5、7。</description>
       
       <guid>/v2.0/05-radondb-redis-cluster/01-install-radondb-redis-cluster/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Redis Cluster 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Redis Cluster。
 在页面右侧选择新建 Redis Cluster 实例。
@@ -238,10 +255,9 @@ Redis Cluster 实例所属的企业空间和项目。
 在应用设置页签，设置 Redis Cluster 实例的参数。
 参数 描述 版本
 Redis Cluster 应用的版本。
-内核版本
+数据库内核
 Redis Cluster 数据库的内核版本。
-CPU/内存
-为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。</description>
+CPU/内存</description>
     </item>
     
     <item>
@@ -251,8 +267,8 @@ CPU/内存
       
       <guid>/v2.0/06-radondb-redis-sentinel/01-install-radondb-redis-sentinel/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Redis Sentinel 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Redis Sentinel。
 在页面右侧选择新建 Redis Sentinel 实例。
@@ -266,20 +282,17 @@ RadonDB Redis Sentinel 实例所属的企业空间和项目。
 在应用设置页签，设置 Redis Sentinel 实例的参数。
 参数 描述 版本
 Redis Sentinel 应用的版本。
-内核版本
-Redis Sentinel 数据库的内核版本。
-CPU/内存
-为每个节点预留的 CPU 和内存资源，同时也是每个节点可使用的 CPU 和内存资源上限。</description>
+数据库内核
+Redis Sentinel 数据库的内核版本。</description>
     </item>
     
     <item>
       <title>创建备份仓库</title>
-      <link>/v2.0/12-backup-management/01-create-a-backup-repository/</link>
+      <link>/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/v2.0/12-backup-management/01-create-a-backup-repository/</guid>
-      <description>本节介绍如何创建 RadonDB 数据库的备份仓库，以存储在各数据库详情页的“备份管理”页签创建的备份。
-目前支持 S3 存储及本地存储两种存储类型。
+      <guid>/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/</guid>
+      <description>本节介绍如何创建 RadonDB 数据库的备份仓库，以存储在各数据库详情页的“备份管理”页签创建的备份。目前仅支持 S3 存储。
 前提条件 准备好 S3 备份仓库所在的区域名称、S3 访问地址、访问密钥和访问密钥口令。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
@@ -290,7 +303,7 @@ CPU/内存
 备份仓库名称
 最长 63 个字符，只能包含小写字母、数字及分隔符(&amp;#39;-&amp;#39;)，且必须以小写字母或数字开头及结尾。
 bucket
-S3 备份仓库所在的区域（region）名称。
+S3 备份仓库的（bucket）名称。
 访问地址
 S3 备份仓库的访问地址。
 访问密钥
@@ -487,8 +500,8 @@ max.message.bytes
       
       <guid>/v2.0/10-radondb-kafka/01-quickstart/</guid>
       <description>本节介绍如何快速创建 RadonDB Kafka 实例并访问 Kafka。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 创建 Kafka 实例 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Kafka。
 在页面右侧选择新建 Kafka 实例。
@@ -501,9 +514,7 @@ KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件�
 在页面右侧点击主题页签，然后点击创建。
 在创建主题对话框，输入主题名称，如 demo-topic, 并设置分区数量和副本数量，点击确定。
 创建 Kafka 用户 在 Kafka 实例列表中，点击一个实例名称打开其详情页面。
-在页面右侧点击 Kafka 用户页签，然后点击创建。
-在创建用户对话框，设置用户名，如 demo-user1，并配置以下两条规则：
-规则 1: 允许“主题”名称为 demo-topic 的所有操作权限。</description>
+在页面右侧点击 Kafka 用户页签，然后点击创建。</description>
     </item>
     
     <item>
@@ -627,6 +638,20 @@ PostgreSQL 只支持修改已创建用户的密码，不支持编辑名称和权
     </item>
     
     <item>
+      <title>查看备份仓库</title>
+      <link>/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/</guid>
+      <description>本节介绍如何查看 RadonDB 数据库的备份仓库信息。
+前提条件 已创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
+在备份仓库列表中，找到目标仓库，点击，选择查看备份仓库。
+查看备份仓库的详细信息，点击确定。</description>
+    </item>
+    
+    <item>
       <title>查看数据库备份</title>
       <link>/v2.0/12-backup-management/02-backup-data-management/01-view-backup-list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -682,7 +707,7 @@ MySQL 实例的运行状态。
 MySQL 实例所属的企业空间。
 项目
 MySQL 实例所属的项目。
-内核版本
+数据库内核
 MySQL 数据库的内核版本。
 创建时间
 MySQL 实例的创建时间。
@@ -721,7 +746,7 @@ OpenSearch 实例的运行状态。
 OpenSearch 实例所属的企业空间。
 项目
 OpenSearch 实例所属的项目。
-内核版本
+数据库内核
 OpenSearch 数据库的内核版本。
 创建时间
 OpenSearch 实例的创建时间。
@@ -760,7 +785,7 @@ Redis Cluster 实例的运行状态。
 Redis Cluster 实例所属的企业空间。
 项目
 Redis Cluster 实例所属的项目。
-内核版本
+数据库内核
 Redis Cluster 数据库的内核版本。
 创建时间
 Redis Cluster 实例的创建时间。
@@ -791,7 +816,7 @@ Redis Sentinel 实例的运行状态。
 Redis Sentinel 实例所属的企业空间。
 项目
 Redis Sentinel 实例所属的项目。
-内核版本
+数据库内核
 Redis Sentinel 数据库的内核版本。
 创建时间
 Redis Sentinel 实例的创建时间。
@@ -822,7 +847,7 @@ MongoDB 实例的运行状态。
 MongoDB 实例所属的企业空间。
 项目
 MongoDB 实例所属的项目。
-内核版本
+数据库内核
 MongoDB 数据库的内核版本。
 创建时间
 MongoDB 实例的创建时间。
@@ -861,7 +886,7 @@ PostgreSQL 实例的运行状态。
 PostgreSQL 实例所属的企业空间。
 项目
 PostgreSQL 实例所属的项目。
-内核版本
+数据库内核
 PostgreSQL 数据库的内核版本。
 创建时间
 PostgreSQL 实例的创建时间。
@@ -900,7 +925,7 @@ RabbitMQ 实例的运行状态。
 RabbitMQ 实例所属的企业空间。
 项目
 RabbitMQ 实例所属的项目。
-内核版本
+数据库内核
 RabbitMQ 的内核版本。
 创建时间
 RabbitMQ 实例的创建时间。
@@ -922,8 +947,8 @@ RabbitMQ 实例所属的项目。
       
       <guid>/v2.0/10-radondb-kafka/02-install-radondb-kafka/</guid>
       <description>本节介绍如何在 DMP 数据库管理平台上创建 RadonDB Kafka 实例。
-前提条件 在 KubeSphere 企业版平台加入一个项目。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。
+前提条件 在 KubeSphere 企业版平台加入一个企业空间和一个项目。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。
 操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
 在左侧导航栏选择 Kafka。
 在页面右侧选择新建 Kafka 实例。
@@ -937,15 +962,13 @@ Kafka 实例所属的企业空间和项目。
 在应用设置页签，设置 Kafka 实例的参数。
 参数 描述 版本
 Kafka 应用的版本。
-内核版本
+数据库内核
 Kafka 的内核版本。
 资源
 分配给每个 Kafka/ZooKeeper 节点的 CPU 和内存资源。
 Kafka/ZooKeeper 节点数量
 Kafka/ZooKeeper 节点的数量。
-存储类
-Kafka/ZooKeeper 使用的存储系统对应的存储类。如果下拉列表中没有符合需要的存储类，请联系平台管理员创建存储类。
-卷</description>
+存储类</description>
     </item>
     
     <item>
@@ -1011,8 +1034,8 @@ Kafka/ZooKeeper 使用的存储系统对应的存储类。如果下拉列表中�
       
       <guid>/v2.0/01-intro/02-access-dmp/</guid>
       <description>本节介绍如何从 KubeSphere 企业版 v4.0 Web 控制台进入 RadonDB DMP 数据库管理平台，并查看其概览信息。
-前提条件 以 platform-admin 角色登录到 KubeSphere 企业版 Web 控制台。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的用户和角色管理章节。
-KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。有关更多信息，请参阅 KubeSphere 企业版 v4.0 使用文档的扩展组件管理章节。
+前提条件 以 platform-admin 角色登录到 KubeSphere 企业版 Web 控制台。更多相关信息，请参阅 KubeSphere 企业版 v4.0 使用文档的用户和角色管理章节。
+KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。更多相关信息，请参阅 KubeSphere 企业版 v4.0 使用文档的扩展组件管理章节。
 操作步骤 打开 Web 浏览器，在地址栏中输入 KubeSphere 企业版 Web 控制台的 IP 地址和端口号。
 在 KubeSphere 企业版登录页面，输入用户信息然后点击登录。
 点击顶部导航栏上的图标，点击 RadonDB DMP，进入数据库管理平台。
@@ -1037,14 +1060,30 @@ OpenSearch 集群内部自动生成证书(默认)，具有以下特点：
 自定义有效期。
 暂不支持证书更换或续签。
 该证书可用于从 Kubernetes 集群外部访问 OpenSearch 集群。
+配置 OpenSearch 设置 OpenSearch CR:.spec.confMgmt.updateConfigOnly 的值为 true。
+spec: confMgmt: forceRestart: true smartScaler: true updateConfigOnly: true 备注 请务必把该值设为 true。否则，后续操作将还原所有 OpenSearch 集群的用户、角色、密码等设置。
+修改该配置不会触发 pod 重建。
 OpenSearch 集群内部自动生成证书 在 OpenSearch Dashboards 上开启 TLS 认证。
 将 spec.dashboards.tls.enable 的值设置为 true。
 将 spec.dashboards.tls.generate 的值设置为 true。
 在 OpenSearch 集群上开启 TLS 认证。
-将 spec.security.tls.transport.generate 的值设置为 true。
-将 spec.security.tls.http.generate 的值设置为 true。
-配置文件如下所示：
-apiVersion: opensearch.opster.io/v1 kind: OpenSearchCluster metadata: name: os-001 spec: general: version: 2.3.0 httpPort: 9200 vendor: opensearch serviceName: os-001 dashboards: version: 2.</description>
+将 spec.security.tls.transport.generate 的值设置为 true。</description>
+    </item>
+    
+    <item>
+      <title>编辑备份仓库</title>
+      <link>/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/</guid>
+      <description>本节介绍如何编辑 RadonDB 数据库的备份仓库信息。
+前提条件 已创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
+在备份仓库列表中，找到目标仓库，点击，选择编辑。
+在弹出的编辑对话框，修改备份仓库的信息，点击确定。
+备注 只有在备份仓库未存储数据库备份的情况下，才能编辑该备份仓库。
+如果备份仓库已存储数据库备份，删除备份数据后，才能编辑备份仓库。</description>
     </item>
     
     <item>
@@ -1139,7 +1178,7 @@ Kafka 实例的运行状态。
 Kafka 实例所属的企业空间。
 项目
 Kafka 实例所属的项目。
-内核版本
+数据库内核
 Kafka 的内核版本。
 创建时间
 Kafka 实例的创建时间。
@@ -1391,7 +1430,7 @@ RadonDB OpenSearch 实例状态为运行中。
       <description>本节介绍如何访问 RadonDB MySQL 数据库。
 前提条件 已获取 KubeSphere 企业版平台登录账号和密码，且已获取平台操作管理权限。
 RadonDB MySQL 实例状态为运行中。
-已获取 MySQL 数据库用户名和密码。有关更多信息，请参阅创建数据库用户。
+已获取 MySQL 数据库用户名和密码。更多相关信息，请参阅创建数据库用户。
 通过 KubeSphere 企业版平台访问 以下演示在 KubeSphere 企业版平台访问 RadonDB MySQL 的方式。
 在 KubeSphere 企业版平台右下角工具箱中选择 kubectl 工具，通过 kubectl 工具访问 RadonDB MySQL。
 连接 RadonDB MySQL 数据库的命令如下：
@@ -1447,6 +1486,22 @@ port 默认为 15672，可以不指定 --port 参数。
 &amp;lt;password&amp;gt;：默认为 guest。如果通过命令行新增了 RabbitMQ 用户，请替换为新用户的密码。
 示例命令如下：
 rabbitmqadmin --host=radondb-feoed2.test --port=15672 --username=guest --password=guest 若在集群外部访问 RabbitMQ，执行以下命令：</description>
+    </item>
+    
+    <item>
+      <title>删除备份仓库</title>
+      <link>/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/</guid>
+      <description>本节介绍如何删除 RadonDB 数据库的备份仓库。
+前提条件 已创建备份仓库。
+操作步骤 以 platform-admin 角色登录 KubeSphere 企业版 Web 控制台并进入数据库管理平台。
+在左侧导航栏点击备份管理 &amp;gt; 备份仓库管理。
+在备份仓库列表中，找到目标仓库，点击，选择删除。
+在弹出的删除对话框，输入备份仓库的名称，点击确定。
+备注 只有在备份仓库未存储数据库备份的情况下，才能删除备份仓库。
+如果备份仓库已存储数据库备份，删除备份数据后，才能删除备份仓库。</description>
     </item>
     
     <item>
@@ -2143,6 +2198,38 @@ log.roll.hours
 选择需要删除的实例左侧的复选框，然后在列表上方点击删除。
 在确认删除对话框中，输入要删除的实例名称，点击确定。
 备注 请使用半角逗号（,）和空格分隔多个名称。</description>
+    </item>
+    
+    <item>
+      <title>v2.0.0 版本说明</title>
+      <link>/v2.0/15-release-notes/01-v2.0.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/v2.0/15-release-notes/01-v2.0.0/</guid>
+      <description>全新管理平面 支持多种类型数据库与中间件的的可视化创建与统一管理。
+支持对 K8s 集群进行切换，查看不同集群上的数据库与中间件实例。
+可扩展 采用全新的微内核架构 KubeSphere LuBan，支持 RadonDB DMP 功能扩展。
+MySQL 支持 MySQL 版本：5.7、8.0
+支持通过 Uber 日志格式改进命令和 Sidecar 中的日志记录
+支持备份进行过程中滚动更新暂停转换
+添加备份版本转换和 MySQL 转换逻辑
+添加 CRD 名称空间转换
+添加维护模式删除领导者服务
+增强实例健康检查
+修复插件 xtraconf 所有权问题和 S3 备份环境问题
+修复 Chart 问题和版本问题
+修复备份/恢复中的 Bugs 并融合 V2.4.0 功能
+修复通过 Helm 安装时备份转换问题
+修复运维人员中的备份转换崩溃问题
+修复与 Xenon 健康检查相关的 Bugs
+修改检查 CRD 配置
+OpenSearch 支持 OpenSearch、Dashboard、Logstash 等节点的部署和管理
+支持 OpenSearch 版本：2.8.0
+支持动态扩展实例计算规格和存储容量
+支持动态调整实例节点数量
+支持通过滚动方式执行配置更改
+支持 Keystore 功能
+支持对接 Prometheus，提供基于 Exporter 的资源状态监控功能</description>
     </item>
     
     <item>

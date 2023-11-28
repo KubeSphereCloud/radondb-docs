@@ -137,7 +137,7 @@
       <div class="sidebar-title" >
         <a href="/v2.0/">
           
-            DMP 数据库管理平台
+            RadonDB DMP
         </a>
         
       </div>
@@ -188,7 +188,7 @@
       
       
           
-          <li class="sidebar-item active current">
+          <li class="sidebar-item  ">
             <a href="/v2.0/01-intro/01-overview/">产品概述</a>
           </li>
         
@@ -365,7 +365,7 @@
       
       
           
-          <li class="sidebar-item  ">
+          <li class="sidebar-item active current">
             <a href="/v2.0/02-radondb-mysql/03-manage-database-users/01-create-a-database-user/">创建数据库用户</a>
           </li>
         
@@ -2609,10 +2609,99 @@
       
       
       
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/01-repository-management/">管理备份仓库</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
           
           <li class="sidebar-item  ">
-            <a href="/v2.0/12-backup-management/01-create-a-backup-repository/">创建备份仓库</a>
+            <a href="/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/">创建备份仓库</a>
           </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/">查看备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/">编辑备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/">删除备份仓库</a>
+          </li>
+        
+      
+    
+  
+</ul>
         
       
     
@@ -2706,6 +2795,51 @@
     
   
     
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/15-release-notes/">版本说明</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/15-release-notes/01-v2.0.0/">v2.0.0 版本说明</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
   
 </ul>
       
@@ -2723,7 +2857,7 @@
     产品概述</h1>
   <div class="post-info">
     <div class="post-date">
-      更新时间：2023-11-22 02:07:08
+      更新时间：2023-11-28 05:41:51
     </div>
     
     
@@ -2743,36 +2877,170 @@
     
   </div><div class="post-menu">
   <div class="post-menu-title">本页目录</div>
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_启用_radondb_dmp">启用 RadonDB DMP</a></li>
+    <li><a href="#_版本介绍">版本介绍</a></li>
+  </ul>
+</nav>
 </div><div class="post-content">
     
       
-      <div class="paragraph">
+      
+<div class="paragraph">
 <p>RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。</p>
 </div>
 <div class="paragraph">
 <p>RadonDB DMP 提供一站式、可视化的云原生数据库全生命周期管理。支持一键部署数据库，统一管理所有数据库实例，快速定位潜在风险和故障，并即时监测全局指标状态，提高数据库管理效率。</p>
 </div>
-<table class="tableblock frame-all grid-all stretch admon note">
+<div class="sect1">
+<h2 id="_启用_radondb_dmp">启用 RadonDB DMP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件。</p>
+</div>
+<div class="paragraph">
+<p>使用 RadonDB DMP，您需要：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>安装 KubeSphere 企业版 v4.0 或更高版本。</p>
+</li>
+<li>
+<p>在扩展市场 <a href="https://kubesphere.com.cn/marketplace/extensions/dmp/">KubeSphere Marketplace</a> 中订阅并安装 <strong>RadonDB DMP</strong>。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>更多相关信息，请参阅 KubeSphere 企业版使用文档的<a href="https://docs.kubesphere.com.cn/v4.0/06-extension-user-guide/">扩展组件管理</a>章节。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_版本介绍">版本介绍</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>RadonDB DMP 中各数据库/中间件产品的包版本以及内核版本如下：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 66.6668%;"/>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">备注</th>
+<th class="tableblock halign-left valign-top">数据库名称</th>
+<th class="tableblock halign-left valign-top">包版本</th>
+<th class="tableblock halign-left valign-top">数据库内核</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>在 KubeSphere 企业版 v4.0 及之后的版本中，RadonDB DMP 数据库管理平台是一个独立的扩展组件，需要在扩展市场（KubeSphere Marketplace）订阅安装后才能使用。</p>
+<p>MySQL</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.0.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>5.7</p>
 </div>
 <div class="paragraph">
-<p>有关更多信息，请参阅 KubeSphere 企业版使用文档的<a href="https://docs.kubesphere.com.cn/v4.0/06-extension-user-guide/">扩展组件管理</a>章节。</p>
+<p>8.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>OpenSearch</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2.0.25</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2.8.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Redis Cluster</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.3.1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>7.0.4</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Redis Sentinel</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.3.1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>7.0.4</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>MongoDB</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.1.10</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>5.0.10</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>PostgreSQL</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.2.4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>12.12</p>
+</div>
+<div class="paragraph">
+<p>13.8</p>
+</div>
+<div class="paragraph">
+<p>14.5</p>
+</div>
+<div class="paragraph">
+<p>15.3</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Kafka</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>0.2.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.2</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>RabbitMQ</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2.2.2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.11.13</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
     
 
@@ -2789,7 +3057,12 @@
 </div>
 <div class="post-placeholder"><div class="post-menu">
   <div class="post-menu-title">本页目录</div>
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_启用_radondb_dmp">启用 RadonDB DMP</a></li>
+    <li><a href="#_版本介绍">版本介绍</a></li>
+  </ul>
+</nav>
 </div></div>
       </div>
     </div>

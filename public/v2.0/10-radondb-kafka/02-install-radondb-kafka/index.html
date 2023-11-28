@@ -137,7 +137,7 @@
       <div class="sidebar-title" >
         <a href="/v2.0/">
           
-            DMP 数据库管理平台
+            RadonDB DMP
         </a>
         
       </div>
@@ -2609,10 +2609,99 @@
       
       
       
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/12-backup-management/01-repository-management/">管理备份仓库</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
           
           <li class="sidebar-item  ">
-            <a href="/v2.0/12-backup-management/01-create-a-backup-repository/">创建备份仓库</a>
+            <a href="/v2.0/12-backup-management/01-repository-management/01-create-a-backup-repository/">创建备份仓库</a>
           </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/02-view-a-backup-repository/">查看备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/03-edit-a-backup-repository/">编辑备份仓库</a>
+          </li>
+        
+      
+    
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/12-backup-management/01-repository-management/04-delete-a-backup-repository/">删除备份仓库</a>
+          </li>
+        
+      
+    
+  
+</ul>
         
       
     
@@ -2706,6 +2795,51 @@
     
   
     
+      
+      
+      
+      
+        
+          <li
+            class="sidebar-item collapsed ">
+            <a href="/v2.0/15-release-notes/">版本说明</a>
+            
+            
+              
+                
+                  
+                
+              
+            
+            
+              <span
+                class="menu-switch-icon icon-caret_down_fill">
+              </span>
+            
+          </li>
+          
+          <ul>
+  
+  
+    
+      
+      
+      
+      
+          
+          <li class="sidebar-item  ">
+            <a href="/v2.0/15-release-notes/01-v2.0.0/">v2.0.0 版本说明</a>
+          </li>
+        
+      
+    
+  
+</ul>
+        
+      
+    
+  
+    
   
 </ul>
       
@@ -2723,7 +2857,7 @@
     创建 Kafka 实例</h1>
   <div class="post-info">
     <div class="post-date">
-      更新时间：2023-11-22 02:07:08
+      更新时间：2023-11-28 05:41:51
     </div>
     
     
@@ -2762,10 +2896,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>在 KubeSphere 企业版平台加入一个项目。</p>
+<p>在 KubeSphere 企业版平台加入一个企业空间和一个项目。</p>
 </li>
 <li>
-<p>KubeSphere 企业版平台需要安装“数据库管理平台”扩展组件。</p>
+<p>KubeSphere 企业版平台需要安装 RadonDB DMP 扩展组件。</p>
 </li>
 </ul>
 </div>
@@ -2856,7 +2990,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>内核版本</p>
+<p>数据库内核</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Kafka 的内核版本。</p>
@@ -2916,7 +3050,7 @@
 <p>反亲和性配置</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>开启反亲和性配置后， pod 将必须调度到不同的物理节点。</p>
+<p>开启反亲和性配置后， pod 将优先调度到不同的 node 上。</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2924,7 +3058,7 @@
 <p>node 亲和设置</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>开启 node 亲和设置后，添加匹配 Node 的键值对，可以将 pod 部署在特定条件的 node 上。</p>
+<p>开启 node 亲和设置后，添加匹配 node 的键值对，可以将 pod 部署在特定条件的 node 上。</p>
 </div>
 <div class="ulist">
 <ul>
